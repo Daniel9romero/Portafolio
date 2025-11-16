@@ -2,7 +2,7 @@ import { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Download, ArrowRight, Camera, Cube } from 'lucide-react';
+import { Download, ArrowRight, Camera, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useTranslation } from 'react-i18next';
@@ -92,7 +92,7 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
                 onClick={() => setShowAvatar(!showAvatar)}
                 className="gap-2"
               >
-                <Cube className="h-4 w-4" />
+                <Box className="h-4 w-4" />
                 {showAvatar ? 'Ver Foto' : 'Ver Avatar 3D'}
               </Button>
               

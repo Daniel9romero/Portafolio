@@ -1,0 +1,102 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║  🚀 ACTIVA GITHUB PAGES EN 1 MINUTO (ÚLTIMO PASO)           ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+✅ TU CÓDIGO YA ESTÁ EN GITHUB
+✅ TU FOTO YA ESTÁ INTEGRADA
+✅ TODO LISTO - SOLO FALTA ACTIVAR PAGES
+
+═══════════════════════════════════════════════════════════════
+
+📋 PASO A PASO (1 minuto):
+
+═══════════════════════════════════════════════════════════════
+🌐 PASO 1: Abre esta URL en tu navegador
+═══════════════════════════════════════════════════════════════
+
+https://github.com/Daniel9romero/Portafolio/settings/pages
+
+(Si no has iniciado sesión en GitHub, te pedirá login)
+
+═══════════════════════════════════════════════════════════════
+⚙️ PASO 2: Cambiar Source
+═══════════════════════════════════════════════════════════════
+
+Verás una sección que dice "Build and deployment"
+
+Debajo dice "Source" con un menú desplegable.
+
+1. Haz click en el menú "Source"
+2. Selecciona: "GitHub Actions"
+
+   ⚠️ NO selecciones "Deploy from a branch"
+   ✓ Debe quedar en "GitHub Actions"
+
+3. Se guarda automáticamente (sin botón de guardar)
+
+═══════════════════════════════════════════════════════════════
+⏱️ PASO 3: Ver el Deploy en Acción
+═══════════════════════════════════════════════════════════════
+
+Abre esta URL:
+
+https://github.com/Daniel9romero/Portafolio/actions
+
+Verás un workflow ejecutándose:
+- Nombre: "Deploy to GitHub Pages"
+- Estado: 🟡 Amarillo (ejecutándose) o ✅ Verde (terminado)
+
+Espera 2-3 minutos si está en amarillo.
+
+═══════════════════════════════════════════════════════════════
+🎉 PASO 4: ¡VER TU PORTAFOLIO!
+═══════════════════════════════════════════════════════════════
+
+Cuando el workflow muestre ✅ verde, abre:
+
+https://daniel9romero.github.io/Portafolio
+
+¡TU PORTAFOLIO ESTARÁ EN LÍNEA!
+
+═══════════════════════════════════════════════════════════════
+
+📌 RESUMEN ULTRA-RÁPIDO:
+
+1. Abre: github.com/Daniel9romero/Portafolio/settings/pages
+2. Source → "GitHub Actions"
+3. Ve a: github.com/Daniel9romero/Portafolio/actions
+4. Espera ✅ verde (2-3 min)
+5. Abre: daniel9romero.github.io/Portafolio
+
+═══════════════════════════════════════════════════════════════
+
+❓ SI NO FUNCIONA:
+
+- ¿El workflow tiene ❌ rojo?
+  → Avísame y lo reviso
+
+- ¿No aparece el sitio después de 10 minutos?
+  → Verifica que en Settings → Pages diga "GitHub Actions"
+  → Refresca la caché: Ctrl + Shift + R
+
+- ¿Pide autenticación?
+  → Inicia sesión en github.com con tu cuenta
+
+═══════════════════════════════════════════════════════════════
+
+🎨 CARACTERÍSTICAS DE TU PORTAFOLIO:
+
+✓ Tu foto de perfil integrada
+✓ Mapa LCZ interactivo de CDMX
+✓ Avatar 3D rotable
+✓ 3 idiomas (ES, EN, PT)
+✓ Modo oscuro/claro
+✓ 100% Responsive
+
+═══════════════════════════════════════════════════════════════
+
+¡SOLO FALTA QUE HAGAS CLICK EN "GITHUB ACTIONS"!
+
+═══════════════════════════════════════════════════════════════

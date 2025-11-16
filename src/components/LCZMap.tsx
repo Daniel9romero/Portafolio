@@ -289,3 +289,5 @@ export function LCZMap({ tifFile }: LCZMapProps) {
     </div>
   );
 }
+
+export default LCZMap;
