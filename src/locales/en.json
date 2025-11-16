@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "research": "Research",
+    "lcz-map": "LCZ Map",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "José Martínez",
+    "subtitle": "Head of Business Intelligence Center",
+    "company": "Grupo Bafar",
+    "description": "Strategic leader in business intelligence and data science overseeing analytics for 5,000+ employees. Specialized in digital transformation, machine learning, and urban remote sensing.",
+    "cta": "View Projects",
+    "cta2": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "content1": "I lead the Business Intelligence Center (CIB) at Grupo Bafar, overseeing BI operations across all divisions: Food, Retail, Food Service, and International/Export.",
+    "content2": "Master's degree in Data Science and Business Intelligence with international academic exchanges in Brazil, Colombia, and Mexico. Currently finalizing my thesis on local climate zone classification in Mexico City using ML algorithms and Landsat 9.",
+    "content3": "My work combines strategic leadership with deep technical expertise, achieving 2300% efficiency improvements in critical business processes.",
+    "stats": {
+      "accuracy": "83.65% ML Accuracy",
+      "employees": "5,000+ Employees",
+      "efficiency": "2300% Improvement",
+      "projections": "2030 Projections"
+    }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "filter": "Filter by technology",
+    "all": "All",
+    "viewDetails": "View Details",
+    "viewGithub": "View Code",
+    "project1": {
+      "title": "Mexico City LCZ Classification",
+      "description": "Urban climate zone classification system using Gradient Tree Boost and Landsat 9",
+      "achievement": "83.65% accuracy with ML algorithms"
+    },
+    "project2": {
+      "title": "Retail Expansion 2030",
+      "description": "Predictive model and interactive dashboard for 1,000 stores expansion",
+      "achievement": "Complete scenario analysis and financial projections"
+    },
+    "project3": {
+      "title": "Competitive Intelligence",
+      "description": "Benchmarking against Sigma Alimentos and Qualtia focusing on digitalization",
+      "achievement": "Deep analysis of technology capabilities and competitive advantages"
+    },
+    "project4": {
+      "title": "Cold Cuts Market Analysis",
+      "description": "Per capita consumption models and state-by-state projections for Mexico",
+      "achievement": "Strategic insights for category expansion"
+    },
+    "project5": {
+      "title": "Meat Products Classification",
+      "description": "Automated system in R for product cataloging",
+      "achievement": "2300% improvement in processing efficiency"
+    },
+    "project6": {
+      "title": "Strategic Planning 2026",
+      "description": "Comprehensive research for digital transformation initiatives",
+      "achievement": "Complete roadmap for all Grupo Bafar divisions"
+    }
+  },
+  "skills": {
+    "title": "Technology Stack",
+    "categories": {
+      "data": "Data Science",
+      "bi": "Business Intelligence",
+      "gis": "GIS & Remote Sensing",
+      "programming": "Programming"
+    }
+  },
+  "experience": {
+    "title": "Professional Journey",
+    "current": "Present",
+    "job1": {
+      "title": "Head of Business Intelligence Center",
+      "company": "Grupo Bafar",
+      "period": "2022 - Present",
+      "description": "Leading BI transformation across all divisions. Developing predictive models, competitive analysis, and 2026 strategic planning."
+    },
+    "job2": {
+      "title": "Business Intelligence Analyst",
+      "company": "Quién es Quién",
+      "period": "2020 - 2022",
+      "description": "Development of analytics systems and process optimization with significant efficiency improvements."
+    },
+    "job3": {
+      "title": "Data Specialist",
+      "company": "SEDENA",
+      "period": "2018 - 2020",
+      "description": "Complex data analysis and intelligence solutions development."
+    }
+  },
+  "research": {
+    "title": "Research & Publications",
+    "thesis": {
+      "title": "Local Climate Zone Classification in Mexico City",
+      "description": "Using Machine Learning algorithms and Landsat 9 satellite imagery",
+      "status": "In finalization - 83.65% accuracy achieved"
+    },
+    "conference": {
+      "title": "CIMA 2025",
+      "description": "Presentation on urban remote sensing and climatology"
+    },
+    "interests": {
+      "title": "Research Interests",
+      "item1": "Urban Climatology",
+      "item2": "Applied Machine Learning",
+      "item3": "Satellite Remote Sensing",
+      "item4": "Business Intelligence"
+    },
+    "phd": "Actively exploring PhD opportunities in international programs"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's connect for strategic collaborations",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Location",
+    "locationValue": "San José del Cabo, Mexico",
+    "message": "Send Message",
+    "name": "Name",
+    "emailField": "Email",
+    "messageField": "Message",
+    "send": "Send"
+  }
+}

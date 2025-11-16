@@ -1,0 +1,134 @@
+{
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "projects": "Projetos",
+    "skills": "Habilidades",
+    "experience": "Experiência",
+    "research": "Pesquisa",
+    "lcz-map": "Mapa LCZ",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "José Martínez",
+    "subtitle": "Chefe do Centro de Inteligência de Negócios",
+    "company": "Grupo Bafar",
+    "description": "Líder estratégico em inteligência de negócios e ciência de dados supervisionando análises para mais de 5.000 funcionários. Especializado em transformação digital, machine learning e sensoriamento remoto urbano.",
+    "cta": "Ver Projetos",
+    "cta2": "Baixar CV"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "content1": "Lidero o Centro de Inteligência de Negócios (CIB) no Grupo Bafar, supervisionando operações de BI em todas as divisões: Alimentos, Varejo, Food Service e Internacional/Exportação.",
+    "content2": "Mestrado em Ciência de Dados e Inteligência de Negócios com intercâmbios acadêmicos internacionais no Brasil, Colômbia e México. Atualmente finalizando minha tese sobre classificação de zonas climáticas locais na Cidade do México usando algoritmos de ML e Landsat 9.",
+    "content3": "Meu trabalho combina liderança estratégica com expertise técnica profunda, alcançando melhorias de eficiência de 2300% em processos críticos de negócios.",
+    "stats": {
+      "accuracy": "83.65% Precisão ML",
+      "employees": "5.000+ Funcionários",
+      "efficiency": "2300% Melhoria",
+      "projections": "Projeções 2030"
+    }
+  },
+  "projects": {
+    "title": "Projetos Destacados",
+    "filter": "Filtrar por tecnologia",
+    "all": "Todos",
+    "viewDetails": "Ver Detalhes",
+    "viewGithub": "Ver Código",
+    "project1": {
+      "title": "Classificação LCZ Cidade do México",
+      "description": "Sistema de classificação de zonas climáticas urbanas usando Gradient Tree Boost e Landsat 9",
+      "achievement": "83.65% de precisão com algoritmos de ML"
+    },
+    "project2": {
+      "title": "Expansão Varejo 2030",
+      "description": "Modelo preditivo e dashboard interativo para expansão de 1.000 lojas",
+      "achievement": "Análise completa de cenários e projeções financeiras"
+    },
+    "project3": {
+      "title": "Inteligência Competitiva",
+      "description": "Benchmarking contra Sigma Alimentos e Qualtia focando em digitalização",
+      "achievement": "Análise profunda de capacidades tecnológicas e vantagens competitivas"
+    },
+    "project4": {
+      "title": "Análise de Mercado de Embutidos",
+      "description": "Modelos de consumo per capita e projeções estado por estado para o México",
+      "achievement": "Insights estratégicos para expansão de categoria"
+    },
+    "project5": {
+      "title": "Classificação de Produtos Cárneos",
+      "description": "Sistema automatizado em R para catalogação de produtos",
+      "achievement": "Melhoria de 2300% na eficiência de processamento"
+    },
+    "project6": {
+      "title": "Planejamento Estratégico 2026",
+      "description": "Pesquisa abrangente para iniciativas de transformação digital",
+      "achievement": "Roadmap completo para todas as divisões do Grupo Bafar"
+    }
+  },
+  "skills": {
+    "title": "Stack Tecnológico",
+    "categories": {
+      "data": "Ciência de Dados",
+      "bi": "Business Intelligence",
+      "gis": "GIS & Sensoriamento Remoto",
+      "programming": "Programação"
+    }
+  },
+  "experience": {
+    "title": "Trajetória Profissional",
+    "current": "Presente",
+    "job1": {
+      "title": "Chefe do Centro de Inteligência de Negócios",
+      "company": "Grupo Bafar",
+      "period": "2022 - Presente",
+      "description": "Liderando a transformação de BI em todas as divisões. Desenvolvendo modelos preditivos, análise competitiva e planejamento estratégico 2026."
+    },
+    "job2": {
+      "title": "Analista de Inteligência de Negócios",
+      "company": "Quién es Quién",
+      "period": "2020 - 2022",
+      "description": "Desenvolvimento de sistemas de análise e otimização de processos com melhorias significativas de eficiência."
+    },
+    "job3": {
+      "title": "Especialista em Dados",
+      "company": "SEDENA",
+      "period": "2018 - 2020",
+      "description": "Análise de dados complexos e desenvolvimento de soluções de inteligência."
+    }
+  },
+  "research": {
+    "title": "Pesquisa & Publicações",
+    "thesis": {
+      "title": "Classificação de Zonas Climáticas Locais na Cidade do México",
+      "description": "Usando algoritmos de Machine Learning e imagens de satélite Landsat 9",
+      "status": "Em finalização - 83.65% de precisão alcançada"
+    },
+    "conference": {
+      "title": "CIMA 2025",
+      "description": "Apresentação sobre sensoriamento remoto urbano e climatologia"
+    },
+    "interests": {
+      "title": "Interesses de Pesquisa",
+      "item1": "Climatologia Urbana",
+      "item2": "Machine Learning Aplicado",
+      "item3": "Sensoriamento Remoto por Satélite",
+      "item4": "Inteligência de Negócios"
+    },
+    "phd": "Explorando ativamente oportunidades de doutorado em programas internacionais"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos conectar para colaborações estratégicas",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Localização",
+    "locationValue": "San José del Cabo, México",
+    "message": "Enviar Mensagem",
+    "name": "Nome",
+    "emailField": "Email",
+    "messageField": "Mensagem",
+    "send": "Enviar"
+  }
+}
