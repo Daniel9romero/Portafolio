@@ -41,7 +41,7 @@ interface HeroSectionProps {
 export function HeroSection({ darkMode }: HeroSectionProps) {
   const { t } = useTranslation();
   const [showAvatar, setShowAvatar] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState<string | null>('/profile-photo.jpg');
+  const [photoUrl, setPhotoUrl] = useState<string | null>(`${import.meta.env.BASE_URL}profile-photo.jpg`);
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];

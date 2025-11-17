@@ -541,7 +541,7 @@ function App() {
                     <Loader2 className="w-8 h-8 animate-spin" />
                   </div>
                 }>
-                  <InteractiveLCZMap />
+                  <InteractiveLCZMap geoTiffUrl={`${import.meta.env.BASE_URL}lcz-cdmx.tif`} />
                 </Suspense>
                 <div className="p-4 border-t dark:border-gray-700">
                   <p className="text-sm text-gray-600 dark:text-gray-400">
