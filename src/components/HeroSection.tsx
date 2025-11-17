@@ -6,6 +6,7 @@ import { Download, ArrowRight, Camera, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useTranslation } from 'react-i18next';
+import profilePhoto from '/profile-photo.jpg';
 
 // Simple 3D Avatar Component
 function Avatar3D() {
@@ -41,7 +42,7 @@ interface HeroSectionProps {
 export function HeroSection({ darkMode }: HeroSectionProps) {
   const { t } = useTranslation();
   const [showAvatar, setShowAvatar] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState<string | null>(`${import.meta.env.BASE_URL}profile-photo.jpg`);
+  const [photoUrl, setPhotoUrl] = useState<string | null>(profilePhoto);
 
   const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
