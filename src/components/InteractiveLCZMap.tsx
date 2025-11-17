@@ -38,6 +38,7 @@ const sampleData = [
 export default function InteractiveLCZMap({ geoTiffUrl }: { geoTiffUrl?: string }) {
   const [selectedPoint, setSelectedPoint] = useState<typeof sampleData[0] | null>(null);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
+  const [tiffLoaded, setTiffLoaded] = useState(!!geoTiffUrl);
 
   const handleFileUpload = () => {
     const input = document.createElement('input');
@@ -117,13 +118,20 @@ export default function InteractiveLCZMap({ geoTiffUrl }: { geoTiffUrl?: string 
           })}
         </div>
 
-        {/* Upload Button */}
-        <button
-          onClick={handleFileUpload}
-          className="absolute top-4 left-4 z-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-4 py-2 rounded-lg shadow-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-900 transition-colors flex items-center gap-2"
-        >
-          <Upload className="w-4 h-4" /> Cargar GeoTIFF
-        </button>
+        {/* Upload Button / Status */}
+        {tiffLoaded ? (
+          <div className="absolute top-4 left-4 z-20 bg-green-500/90 backdrop-blur px-4 py-2 rounded-lg shadow-lg text-sm font-medium text-white flex items-center gap-2">
+            <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+            GeoTIFF Cargado: LCZ_CDMX_L9
+          </div>
+        ) : (
+          <button
+            onClick={handleFileUpload}
+            className="absolute top-4 left-4 z-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur px-4 py-2 rounded-lg shadow-lg text-sm font-medium hover:bg-white dark:hover:bg-gray-900 transition-colors flex items-center gap-2"
+          >
+            <Upload className="w-4 h-4" /> Cargar GeoTIFF
+          </button>
+        )}
 
         {/* Stats Overlay */}
         <div className="absolute top-4 right-4 z-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur p-3 rounded-lg shadow-lg">
