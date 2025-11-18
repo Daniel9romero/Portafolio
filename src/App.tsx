@@ -38,7 +38,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [scrolled, setScrolled] = useState(false);
-  const [profileImage, setProfileImage] = useState('');
+  const [profileImage, setProfileImage] = useState('/profile-photo.jpg');
   const [avatarMode, setAvatarMode] = useState<'photo' | '3d'>('photo');
 
   useEffect(() => {
@@ -164,7 +164,7 @@ function App() {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
             >
-              JM
+              DR
             </motion.div>
 
             {/* Desktop Menu */}
@@ -699,7 +699,7 @@ function App() {
       <footer className="py-8 px-4 border-t">
         <div className="container mx-auto text-center">
           <p className="text-gray-600 dark:text-gray-400">
-            © 2024 José Martínez. All rights reserved.
+            © 2024 Daniel Romero. All rights reserved.
           </p>
         </div>
       </footer>
