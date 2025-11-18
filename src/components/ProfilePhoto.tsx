@@ -30,7 +30,9 @@ export default function ProfilePhoto({
     accept: {
       'image/*': ['.jpeg', '.jpg', '.png', '.webp']
     },
-    multiple: false
+    multiple: false,
+    noClick: !!imageUrl, // Deshabilitar click si ya hay imagen
+    noDrag: !!imageUrl   // Deshabilitar drag si ya hay imagen
   });
 
   return (
@@ -40,22 +42,22 @@ export default function ProfilePhoto({
       onMouseLeave={() => setIsHovered(false)}
     >
       <div 
-        {...getRootProps()} 
+        {...(imageUrl ? {} : getRootProps())}
         className={`
           relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden 
-          cursor-pointer transition-all duration-300 mx-auto
+          ${!imageUrl ? 'cursor-pointer' : ''} transition-all duration-300 mx-auto
           ${isDragActive ? 'ring-4 ring-blue-500 ring-offset-4' : ''}
-          ${isHovered ? 'transform scale-105' : ''}
+          ${isHovered && !imageUrl ? 'transform scale-105' : ''}
           border-4 border-white dark:border-gray-800
           shadow-2xl
         `}
       >
-        <input {...getInputProps()} />
+        {!imageUrl && <input {...getInputProps()} />}
         
         {imageUrl ? (
           <img 
             src={imageUrl} 
-            alt="Profile" 
+            alt="Daniel Romero - Perfil Profesional" 
             className="w-full h-full object-cover"
           />
         ) : (
@@ -64,19 +66,21 @@ export default function ProfilePhoto({
           </div>
         )}
 
-        {/* Overlay on hover */}
-        <div className={`
-          absolute inset-0 bg-black/50 flex items-center justify-center
-          transition-opacity duration-300
-          ${isHovered || isDragActive ? 'opacity-100' : 'opacity-0'}
-        `}>
-          <div className="text-center text-white">
-            <Camera className="w-8 h-8 mx-auto mb-2" />
-            <p className="text-sm font-medium">
-              {isDragActive ? 'Suelta aquí' : 'Click o arrastra'}
-            </p>
+        {/* Overlay on hover - solo mostrar si NO hay imagen */}
+        {!imageUrl && (
+          <div className={`
+            absolute inset-0 bg-black/50 flex items-center justify-center
+            transition-opacity duration-300
+            ${isHovered || isDragActive ? 'opacity-100' : 'opacity-0'}
+          `}>
+            <div className="text-center text-white">
+              <Camera className="w-8 h-8 mx-auto mb-2" />
+              <p className="text-sm font-medium">
+                {isDragActive ? 'Suelta aquí' : 'Click o arrastra'}
+              </p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Status indicator */}
