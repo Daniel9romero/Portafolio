@@ -68,7 +68,7 @@ function App() {
       id: 1,
       key: 'project1',
       tech: ['Python', 'ML', 'GIS', 'Landsat'],
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-slate-600 to-slate-700',
       icon: Map,
       metrics: { accuracy: 83.65, dataPoints: '1M+' }
     },
@@ -76,7 +76,7 @@ function App() {
       id: 2,
       key: 'project2',
       tech: ['Power BI', 'Python', 'SQL'],
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-blue-600 to-blue-700',
       icon: TrendingUp,
       metrics: { stores: 1000, roi: '250%' }
     },
@@ -84,7 +84,7 @@ function App() {
       id: 3,
       key: 'project3',
       tech: ['Python', 'Web Scraping', 'NLP'],
-      color: 'from-green-500 to-teal-500',
+      color: 'from-emerald-600 to-emerald-700',
       icon: Target,
       metrics: { companies: 5, insights: 150 }
     },
@@ -92,7 +92,7 @@ function App() {
       id: 4,
       key: 'project4',
       tech: ['R', 'Statistical Analysis'],
-      color: 'from-orange-500 to-red-500',
+      color: 'from-amber-600 to-amber-700',
       icon: BarChart3,
       metrics: { states: 32, categories: 15 }
     },
@@ -100,7 +100,7 @@ function App() {
       id: 5,
       key: 'project5',
       tech: ['R', 'Machine Learning'],
-      color: 'from-indigo-500 to-purple-500',
+      color: 'from-indigo-600 to-indigo-700',',
       icon: Brain,
       metrics: { efficiency: 2300, products: '10K+' }
     },
@@ -108,7 +108,7 @@ function App() {
       id: 6,
       key: 'project6',
       tech: ['Strategic Planning', 'BI'],
-      color: 'from-pink-500 to-rose-500',
+      color: 'from-gray-600 to-gray-700',
       icon: Users,
       metrics: { divisions: 4, initiatives: 25 }
     }
@@ -152,7 +152,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg shadow-lg' : 'bg-transparent'
@@ -162,7 +162,7 @@ function App() {
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold text-gray-900 dark:text-white"
             >
               DR
             </motion.div>
@@ -279,7 +279,7 @@ function App() {
               <Badge className="mb-4 px-4 py-2" variant="secondary">
                 {t('hero.company')}
               </Badge>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
                 {t('hero.title')}
               </h1>
               <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-6">
