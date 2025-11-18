@@ -2,7 +2,7 @@ import { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Download, ArrowRight, Camera, Box } from 'lucide-react';
+import { Download, ArrowRight, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useTranslation } from 'react-i18next';
@@ -42,15 +42,9 @@ interface HeroSectionProps {
 export function HeroSection({ darkMode }: HeroSectionProps) {
   const { t } = useTranslation();
   const [showAvatar, setShowAvatar] = useState(false);
-  const [photoUrl, setPhotoUrl] = useState<string | null>(profilePhoto);
+  const [photoUrl] = useState<string>(profilePhoto);
 
-  const handlePhotoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setPhotoUrl(url);
-    }
-  };
+
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
@@ -96,19 +90,6 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
                 <Box className="h-4 w-4" />
                 {showAvatar ? 'Ver Foto' : 'Ver Avatar 3D'}
               </Button>
-              
-              <label className="cursor-pointer">
-                <Button size="sm" variant="ghost" className="gap-2">
-                  <Camera className="h-4 w-4" />
-                  Subir Foto
-                </Button>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handlePhotoUpload}
-                  className="hidden"
-                />
-              </label>
             </div>
           </motion.div>
 
@@ -138,22 +119,11 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
               </div>
             ) : (
               <div className="h-96 w-full rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
-                {photoUrl ? (
-                  <img
-                    src={photoUrl}
-                    alt="José Martínez"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center">
-                      <span className="text-5xl font-bold text-white">JM</span>
-                    </div>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Sube tu foto profesional
-                    </p>
-                  </div>
-                )}
+                <img
+                  src={photoUrl}
+                  alt="Daniel Romero - Desarrollador Full Stack"
+                  className="w-full h-full object-cover"
+                />
               </div>
             )}
           </motion.div>
