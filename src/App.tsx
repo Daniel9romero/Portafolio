@@ -518,42 +518,7 @@ function App() {
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">{t('research.title')}</h2>
           
-          {/* Map Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <Card className="overflow-hidden">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Map className="h-8 w-8 text-blue-600" />
-                  <div>
-                    <CardTitle>Mapa Interactivo LCZ - Ciudad de México</CardTitle>
-                    <CardDescription>Clasificación de Zonas Climáticas Locales con ML</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="p-0">
-                <Suspense fallback={
-                  <div className="h-[500px] w-full bg-gray-100 dark:bg-gray-800 animate-pulse flex items-center justify-center">
-                    <Loader2 className="w-8 h-8 animate-spin" />
-                  </div>
-                }>
-                  <InteractiveLCZMap geoTiffUrl={`${import.meta.env.BASE_URL}lcz-cdmx.tif`} />
-                </Suspense>
-                <div className="p-4 border-t dark:border-gray-700">
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    💡 <strong>Tip:</strong> Puedes cargar tu archivo GeoTIFF clasificado para visualizar los resultados reales. 
-                    El mapa muestra las 17 clases LCZ identificadas con 83.65% de precisión usando Gradient Tree Boost.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
                 <BookOpen className="h-8 w-8 text-blue-600 mb-2" />
@@ -601,6 +566,29 @@ function App() {
                 <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
                   <p className="text-sm font-medium">{t('research.phd')}</p>
                 </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <Map className="h-8 w-8 text-green-600" />
+                  <div>
+                    <CardTitle>Mapa Interactivo LCZ</CardTitle>
+                    <CardDescription>Visualización de Clasificación</CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  Explora el mapa interactivo con las 17 clases LCZ identificadas en CDMX con 83.65% de precisión.
+                </p>
+                <Button asChild className="w-full">
+                  <a href="#lcz-map">
+                    <Map className="w-4 h-4 mr-2" />
+                    Ver Mapa Interactivo
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           </div>
