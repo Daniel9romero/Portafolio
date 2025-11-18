@@ -422,8 +422,10 @@ function App() {
                           ))}
                         </div>
                         <div className="flex gap-2">
-                          <Button size="sm" variant="outline">
-                            {t('projects.viewDetails')} <ExternalLink className="h-3 w-3 ml-1" />
+                          <Button size="sm" variant="outline" asChild>
+                            <a href={project.id === 1 ? "#lcz-map" : "#"}>
+                              {t('projects.viewDetails')} <ExternalLink className="h-3 w-3 ml-1" />
+                            </a>
                           </Button>
                         </div>
                       </CardContent>
