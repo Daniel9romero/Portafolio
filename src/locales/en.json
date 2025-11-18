@@ -10,18 +10,18 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Daniel Romero",
-    "subtitle": "Head of Business Intelligence Center",
+    "title": "José Daniel López Romero",
+    "subtitle": "Head of Data Intelligence | AI-Driven Business Strategy Leader",
     "company": "Grupo Bafar",
-    "description": "Strategic leader in business intelligence and data science overseeing analytics for 5,000+ employees. Specialized in digital transformation, machine learning, and urban remote sensing.",
+    "description": "Data intelligence leader transforming business through AI innovation. Currently heading the intelligence center at Grupo Bafar with a 15% increase in market opportunities and 2300% efficiency improvement. Expert in building AI-powered systems, managing cross-functional teams, and translating complex data into strategic decisions. Specialized in agentic AI, automation workflows, and predictive market research.",
     "cta": "View Projects",
     "cta2": "Download CV"
   },
   "about": {
     "title": "About Me",
-    "content1": "I lead the Business Intelligence Center (CIB) at Grupo Bafar, overseeing BI operations across all divisions: Food, Retail, Food Service, and International/Export.",
-    "content2": "Master's degree in Data Science and Business Intelligence with international academic exchanges in Brazil, Colombia, and Mexico. Currently finalizing my thesis on local climate zone classification in Mexico City using ML algorithms and Landsat 9.",
-    "content3": "My work combines strategic leadership with deep technical expertise, achieving 2300% efficiency improvements in critical business processes.",
+    "content1": "I lead the BI team and market research division at Grupo Bafar, implementing predictive analytics for strategic planning.",
+    "content2": "Master's in Data Science and Business Intelligence (Dual Degree) from UPAEP Mexico & Universidad Siglo XXI Argentina. My thesis on Local Climate Zone classification using Gradient Boosting Forest achieved 84% accuracy, surpassing international standards through remote sensing and ML integration.",
+    "content3": "Specialized in agentic AI, automation workflows, and predictive market research. I've achieved 2300% efficiency improvements in catalog processing and 30% reduction in processing times through n8n automation and API pipeline optimization.",
     "stats": {
       "accuracy": "83.65% ML Accuracy",
       "employees": "5,000+ Employees",
@@ -48,53 +48,80 @@
     "project3": {
       "title": "Competitive Intelligence",
       "description": "Benchmarking against Sigma Alimentos and Qualtia focusing on digitalization",
-      "achievement": "Deep analysis of technology capabilities and competitive advantages"
+      "achievement": "Deep analysis of technological capabilities and competitive advantages"
     },
     "project4": {
-      "title": "Cold Cuts Market Analysis",
+      "title": "Meat Products Market Analysis",
       "description": "Per capita consumption models and state-by-state projections for Mexico",
       "achievement": "Strategic insights for category expansion"
     },
     "project5": {
-      "title": "Meat Products Classification",
-      "description": "Automated system in R for product cataloging",
-      "achievement": "2300% improvement in processing efficiency"
+      "title": "Market Intelligence AI Agent System",
+      "description": "Autonomous agentic AI system using RAG architecture for real-time market analysis",
+      "achievement": "70% reduction in manual analysis time"
     },
     "project6": {
-      "title": "Strategic Planning 2026",
-      "description": "Comprehensive research for digital transformation initiatives",
-      "achievement": "Complete roadmap for all Grupo Bafar divisions"
+      "title": "Strategic Market Expansion Through Geospatial Analytics",
+      "description": "Geospatial dashboard to identify high-potential commercial zones and optimize distribution routes",
+      "achievement": "20% operational cost reduction and 35% market coverage increase"
     }
   },
   "skills": {
     "title": "Technology Stack",
-    "categories": {
-      "data": "Data Science",
-      "bi": "Business Intelligence",
-      "gis": "GIS & Remote Sensing",
-      "programming": "Programming"
+    "category1": {
+      "title": "Data Science",
+      "skills": ["Python", "R", "SQL", "Machine Learning", "Deep Learning", "Statistics"]
+    },
+    "category2": {
+      "title": "Business Intelligence",
+      "skills": ["Power BI", "Tableau", "Qlik Sense", "Excel Advanced", "Data Modeling"]
+    },
+    "category3": {
+      "title": "GIS & Remote Sensing",
+      "skills": ["QGIS", "Google Earth Engine", "ArcGIS", "Remote Sensing", "Landsat", "Sentinel"]
+    },
+    "category4": {
+      "title": "Programming",
+      "skills": ["JavaScript", "Git", "Docker", "APIs", "Web Scraping", "ETL"]
+    },
+    "category5": {
+      "title": "AI & Advanced Analytics",
+      "skills": ["Agentic AI", "LLMs", "RAG", "n8n", "Manus", "Predictive Modeling", "Computer Vision"]
+    },
+    "category6": {
+      "title": "Strategic Leadership",
+      "skills": ["Team Management", "Market Research", "Strategic Planning", "C-Level Reporting", "Cross-functional Collaboration"]
     }
   },
   "experience": {
-    "title": "Professional Journey",
-    "current": "Present",
+    "title": "Professional Experience",
     "job1": {
-      "title": "Head of Business Intelligence Center",
+      "title": "Head of the Intelligence Center",
       "company": "Grupo Bafar",
-      "period": "2022 - Present",
-      "description": "Leading BI transformation across all divisions. Developing predictive models, competitive analysis, and 2026 strategic planning."
+      "period": "November 2024 - Present",
+      "location": "Chihuahua, Mexico",
+      "description": "Lead BI team and market research division, implementing predictive analytics for strategic planning"
     },
     "job2": {
-      "title": "Business Intelligence Analyst",
-      "company": "Quién es Quién",
-      "period": "2020 - 2022",
-      "description": "Development of analytics systems and process optimization with significant efficiency improvements."
+      "title": "Data Analyst",
+      "company": "Quién es quién",
+      "period": "October 2022 - October 2024",
+      "location": "Remote",
+      "description": "Detected process optimization opportunities, boosting operational efficiency by 18%"
     },
     "job3": {
-      "title": "Data Specialist",
-      "company": "SEDENA",
-      "period": "2018 - 2020",
-      "description": "Complex data analysis and intelligence solutions development."
+      "title": "Data Analyst",
+      "company": "Sedena (Plan DNI-III)",
+      "period": "November 2021 - September 2022",
+      "location": "Mexico City, Mexico",
+      "description": "Analyzed DNI-III plan data optimizing resource allocation for suppliers, logistics, and finances"
+    },
+    "job4": {
+      "title": "Digital Strategy Advisor",
+      "company": "PT Nacional",
+      "period": "January 2021 - June 2021",
+      "location": "Mexico City, Mexico",
+      "description": "Analyzed digital marketing data to optimize campaign strategies and increase reach"
     }
   },
   "research": {
@@ -102,11 +129,7 @@
     "thesis": {
       "title": "Local Climate Zone Classification in Mexico City",
       "description": "Using Machine Learning algorithms and Landsat 9 satellite imagery",
-      "status": "In finalization - 83.65% accuracy achieved"
-    },
-    "conference": {
-      "title": "CIMA 2025",
-      "description": "Presentation on urban remote sensing and climatology"
+      "status": "Finalizing - 83.65% accuracy achieved"
     },
     "interests": {
       "title": "Research Interests",
@@ -120,15 +143,15 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Let's connect for strategic collaborations",
-    "email": "Email",
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "location": "Location",
-    "locationValue": "San José del Cabo, Mexico",
-    "message": "Send Message",
-    "name": "Name",
-    "emailField": "Email",
-    "messageField": "Message",
-    "send": "Send"
+    "email": "Daniel9Romero@hotmail.com",
+    "linkedin": "linkedin.com/in/daniel9romero",
+    "github": "github.com/daniel9romero",
+    "location": "Chihuahua, Mexico",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    }
   }
 }

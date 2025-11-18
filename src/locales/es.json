@@ -10,18 +10,18 @@
     "contact": "Contacto"
   },
   "hero": {
-    "title": "Daniel Romero",
-    "subtitle": "Jefe del Centro de Inteligencia de Negocios",
+    "title": "José Daniel López Romero",
+    "subtitle": "Head of Data Intelligence | AI-Driven Business Strategy Leader",
     "company": "Grupo Bafar",
-    "description": "Líder estratégico en inteligencia de negocios y ciencia de datos con más de 5,000 empleados bajo análisis. Especializado en transformación digital, machine learning y teledetección urbana.",
+    "description": "Líder en inteligencia de datos transformando los negocios a través de la innovación en IA. Actualmente dirigiendo el centro de inteligencia en Grupo Bafar con un aumento del 15% en oportunidades de mercado y una mejora del 2300% en eficiencia. Experto en construir sistemas potenciados por IA, gestionar equipos multifuncionales y traducir datos complejos en decisiones estratégicas.",
     "cta": "Ver Proyectos",
     "cta2": "Descargar CV"
   },
   "about": {
     "title": "Sobre Mí",
-    "content1": "Soy el Jefe del Centro de Inteligencia de Negocios (CIB) en Grupo Bafar, liderando operaciones de BI en todas las divisiones: Alimentos, Retail, Food Service e Internacional/Exportación.",
-    "content2": "Maestría en Ciencia de Datos e Inteligencia de Negocios con intercambios académicos internacionales en Brasil, Colombia y México. Actualmente finalizando mi tesis sobre clasificación de zonas climáticas locales en la Ciudad de México usando algoritmos de ML y Landsat 9.",
-    "content3": "Mi trabajo combina liderazgo estratégico con experiencia técnica profunda, logrando mejoras de eficiencia del 2300% en procesos críticos de negocio.",
+    "content1": "Soy el Jefe del Centro de Inteligencia en Grupo Bafar, liderando el equipo de BI y la división de investigación de mercados, implementando analítica predictiva para planificación estratégica.",
+    "content2": "Maestría en Ciencia de Datos e Inteligencia de Negocios (Doble Titulación) por UPAEP México y Universidad Siglo XXI Argentina. Mi tesis sobre clasificación de Zonas Climáticas Locales usando Gradient Boosting Forest alcanzó 84% de precisión, superando estándares internacionales mediante integración de teledetección y ML.",
+    "content3": "Especializado en IA agéntica, flujos de trabajo de automatización e investigación de mercado predictiva. He logrado mejoras de eficiencia del 2300% en procesamiento de catálogos y reducción del 30% en tiempos de procesamiento mediante automatización n8n y optimización de pipelines API.",
     "stats": {
       "accuracy": "83.65% Precisión ML",
       "employees": "5,000+ Empleados",
@@ -56,45 +56,72 @@
       "achievement": "Insights estratégicos para expansión de categorías"
     },
     "project5": {
-      "title": "Clasificación de Productos Cárnicos",
-      "description": "Sistema automatizado en R para catalogación de productos",
-      "achievement": "Mejora del 2300% en eficiencia de procesamiento"
+      "title": "Sistema de Agentes IA de Inteligencia de Mercado",
+      "description": "Sistema automatizado usando arquitectura RAG y agentes inteligentes para análisis de mercado en tiempo real",
+      "achievement": "Reducción del 70% en tiempo de análisis manual"
     },
     "project6": {
-      "title": "Planificación Estratégica 2026",
-      "description": "Research integral para iniciativas de transformación digital",
-      "achievement": "Roadmap completo para todas las divisiones de Grupo Bafar"
+      "title": "Expansión Estratégica de Mercado mediante Analítica Geoespacial",
+      "description": "Dashboard geoespacial para identificar zonas de alto potencial comercial y optimizar rutas de distribución",
+      "achievement": "Reducción del 20% en costos operativos y aumento del 35% en cobertura de mercado"
     }
   },
   "skills": {
     "title": "Stack Tecnológico",
-    "categories": {
-      "data": "Ciencia de Datos",
-      "bi": "Business Intelligence",
-      "gis": "GIS & Teledetección",
-      "programming": "Programación"
+    "category1": {
+      "title": "Ciencia de Datos",
+      "skills": ["Python", "R", "SQL", "Machine Learning", "Deep Learning", "Statistics"]
+    },
+    "category2": {
+      "title": "Business Intelligence",
+      "skills": ["Power BI", "Tableau", "Qlik Sense", "Excel Advanced", "Data Modeling"]
+    },
+    "category3": {
+      "title": "GIS & Teledetección",
+      "skills": ["QGIS", "Google Earth Engine", "ArcGIS", "Remote Sensing", "Landsat", "Sentinel"]
+    },
+    "category4": {
+      "title": "Programación",
+      "skills": ["JavaScript", "Git", "Docker", "APIs", "Web Scraping", "ETL"]
+    },
+    "category5": {
+      "title": "IA & Analítica Avanzada",
+      "skills": ["Agentic AI", "LLMs", "RAG", "n8n", "Manus", "Predictive Modeling", "Computer Vision"]
+    },
+    "category6": {
+      "title": "Liderazgo Estratégico",
+      "skills": ["Team Management", "Market Research", "Strategic Planning", "C-Level Reporting", "Cross-functional Collaboration"]
     }
   },
   "experience": {
     "title": "Trayectoria Profesional",
-    "current": "Actual",
     "job1": {
-      "title": "Jefe del Centro de Inteligencia de Negocios",
+      "title": "Jefe del Centro de Inteligencia",
       "company": "Grupo Bafar",
-      "period": "2022 - Presente",
-      "description": "Liderando la transformación de BI en todas las divisiones. Desarrollo de modelos predictivos, análisis competitivo y planificación estratégica 2026."
+      "period": "Noviembre 2024 - Presente",
+      "location": "Chihuahua, México",
+      "description": "Lidero equipo de BI y división de investigación de mercados, implementando analítica predictiva para planificación estratégica"
     },
     "job2": {
-      "title": "Analista de Inteligencia de Negocios",
-      "company": "Quién es Quién",
-      "period": "2020 - 2022",
-      "description": "Desarrollo de sistemas de análisis y optimización de procesos con mejoras significativas en eficiencia."
+      "title": "Data Analyst",
+      "company": "Quién es quién",
+      "period": "Octubre 2022 - Octubre 2024",
+      "location": "Remoto",
+      "description": "Detecté oportunidades de optimización de procesos, aumentando la eficiencia operativa en 18%"
     },
     "job3": {
-      "title": "Especialista en Datos",
-      "company": "SEDENA",
-      "period": "2018 - 2020",
-      "description": "Análisis de datos complejos y desarrollo de soluciones de inteligencia."
+      "title": "Data Analyst",
+      "company": "Sedena (Plan DNI-III)",
+      "period": "Noviembre 2021 - Septiembre 2022",
+      "location": "Ciudad de México, México",
+      "description": "Analicé datos del plan DNI-III optimizando asignación de recursos para proveedores, logística y finanzas"
+    },
+    "job4": {
+      "title": "Digital Strategy Advisor",
+      "company": "PT Nacional",
+      "period": "Enero 2021 - Junio 2021",
+      "location": "Ciudad de México, México",
+      "description": "Analicé datos de marketing digital para optimizar estrategias de campaña y aumentar el alcance"
     }
   },
   "research": {
@@ -103,10 +130,6 @@
       "title": "Clasificación de Zonas Climáticas Locales en la Ciudad de México",
       "description": "Usando algoritmos de Machine Learning y imágenes satelitales Landsat 9",
       "status": "En finalización - 83.65% de precisión alcanzada"
-    },
-    "conference": {
-      "title": "CIMA 2025",
-      "description": "Presentación sobre teledetección urbana y climatología"
     },
     "interests": {
       "title": "Intereses de Investigación",
@@ -120,15 +143,15 @@
   "contact": {
     "title": "Contacto",
     "subtitle": "Conectemos para colaboraciones estratégicas",
-    "email": "Email",
-    "linkedin": "LinkedIn",
-    "github": "GitHub",
-    "location": "Ubicación",
-    "locationValue": "San José del Cabo, México",
-    "message": "Enviar Mensaje",
-    "name": "Nombre",
-    "emailField": "Correo",
-    "messageField": "Mensaje",
-    "send": "Enviar"
+    "email": "Daniel9Romero@hotmail.com",
+    "linkedin": "linkedin.com/in/daniel9romero",
+    "github": "github.com/daniel9romero",
+    "location": "Chihuahua, México",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "send": "Enviar"
+    }
   }
 }

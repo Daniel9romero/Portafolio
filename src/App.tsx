@@ -39,7 +39,7 @@ function App() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [scrolled, setScrolled] = useState(false);
   const [profileImage, setProfileImage] = useState(`${import.meta.env.BASE_URL}profile-photo.jpg`);
-  const [avatarMode, setAvatarMode] = useState<'photo' | '3d'>('photo');
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -257,41 +257,14 @@ function App() {
               className="order-2 lg:order-1"
             >
               <div className="relative">
-                {/* Toggle between photo and 3D */}
-                <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="flex gap-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur p-1 rounded-full shadow-lg">
-                    <Button
-                      size="sm"
-                      variant={avatarMode === 'photo' ? 'default' : 'ghost'}
-                      onClick={() => setAvatarMode('photo')}
-                      className="rounded-full"
-                    >
-                      📷 Foto
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant={avatarMode === '3d' ? 'default' : 'ghost'}
-                      onClick={() => setAvatarMode('3d')}
-                      className="rounded-full"
-                    >
-                      <Sparkles className="w-4 h-4 mr-1" /> 3D
-                    </Button>
-                  </div>
-                </div>
-
                 <Suspense fallback={
-                  <div className="w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
-                    <Loader2 className="w-8 h-8 animate-spin" />
+                  <div className="w-64 h-64 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse">
                   </div>
                 }>
-                  {avatarMode === 'photo' ? (
-                    <ProfilePhoto 
-                      initialImage={profileImage}
-                      onImageChange={setProfileImage}
-                    />
-                  ) : (
-                    <Avatar3D imageUrl={profileImage} />
-                  )}
+                  <ProfilePhoto 
+                    initialImage={profileImage}
+                    onImageChange={setProfileImage}
+                  />
                 </Suspense>
               </div>
             </motion.div>
@@ -316,12 +289,30 @@ function App() {
                 {t('hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button size="lg" className="gap-2 w-full sm:w-auto touch-manipulation">
-                  {t('hero.cta')} <ArrowRight className="h-4 w-4" />
+                <Button size="lg" className="gap-2 w-full sm:w-auto touch-manipulation" asChild>
+                  <a href="#projects">
+                    {t('hero.cta')} <ArrowRight className="h-4 w-4" />
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto touch-manipulation">
-                  <Download className="h-4 w-4" /> {t('hero.cta2')}
-                </Button>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto touch-manipulation">
+                      <Download className="h-4 w-4" /> {t('hero.cta2')}
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    <DropdownMenuItem asChild>
+                      <a href={`${import.meta.env.BASE_URL}cv-espanol.pdf`} download="CV-Daniel-Romero-ESP.pdf">
+                        🇪🇸 Español
+                      </a>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem asChild>
+                      <a href={`${import.meta.env.BASE_URL}cv-english.pdf`} download="CV-Daniel-Romero-ENG.pdf">
+                        🇬🇧 English
+                      </a>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </motion.div>
           </div>
@@ -687,7 +678,7 @@ function App() {
       <footer className="py-8 px-4 border-t">
         <div className="container mx-auto text-center">
           <p className="text-gray-600 dark:text-gray-400">
-            © 2024 Daniel Romero. All rights reserved.
+            © 2024 José Daniel López Romero
           </p>
         </div>
       </footer>
