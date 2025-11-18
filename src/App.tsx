@@ -100,7 +100,7 @@ function App() {
       id: 5,
       key: 'project5',
       tech: ['R', 'Machine Learning'],
-      color: 'from-indigo-600 to-indigo-700',',
+      color: 'from-indigo-600 to-indigo-700',
       icon: Brain,
       metrics: { efficiency: 2300, products: '10K+' }
     },
