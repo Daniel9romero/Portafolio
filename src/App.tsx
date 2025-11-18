@@ -38,7 +38,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('all');
   const [scrolled, setScrolled] = useState(false);
-  const [profileImage, setProfileImage] = useState('/profile-photo.jpg');
+  const [profileImage, setProfileImage] = useState(`${import.meta.env.BASE_URL}profile-photo.jpg`);
   const [avatarMode, setAvatarMode] = useState<'photo' | '3d'>('photo');
 
   useEffect(() => {
