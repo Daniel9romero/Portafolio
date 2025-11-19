@@ -32,7 +32,6 @@ const Avatar3D = lazy(() => import('./components/Avatar3D'));
 const LCZMap = lazy(() => import('./components/LCZMap'));
 const InteractiveLCZMap = lazy(() => import('./components/InteractiveLCZMap'));
 const LinkedInEmbed = lazy(() => import('./components/LinkedInEmbed').then(module => ({ default: module.LinkedInEmbed })));
-const ContactForm = lazy(() => import('./components/ContactForm').then(module => ({ default: module.ContactForm })));
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -582,69 +581,68 @@ function App() {
             {t('contact.subtitle')}
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="max-w-2xl mx-auto">
             <Card>
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="text-sm text-gray-500">{t('contact.email')}</p>
-                      <a href="mailto:daniel9romero@hotmail.com" className="font-medium hover:text-blue-600 transition-colors">
+              <CardContent className="p-8">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                    <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
+                      <Mail className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('contact.email')}</p>
+                      <a href="mailto:daniel9romero@hotmail.com" className="text-lg font-medium hover:text-blue-600 transition-colors">
                         daniel9romero@hotmail.com
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Linkedin className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="text-sm text-gray-500">{t('contact.linkedin')}</p>
+
+                  <div className="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                    <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
+                      <Linkedin className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('contact.linkedin')}</p>
                       <a
                         href="https://linkedin.com/in/daniel9romero"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium hover:text-blue-600 transition-colors"
+                        className="text-lg font-medium hover:text-blue-600 transition-colors"
                       >
                         linkedin.com/in/daniel9romero
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Github className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="text-sm text-gray-500">{t('contact.github')}</p>
+
+                  <div className="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                    <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
+                      <Github className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('contact.github')}</p>
                       <a
                         href="https://github.com/Daniel9romero"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-medium hover:text-blue-600 transition-colors"
+                        className="text-lg font-medium hover:text-blue-600 transition-colors"
                       >
                         github.com/Daniel9romero
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-blue-600" />
-                    <div>
-                      <p className="text-sm text-gray-500">{t('contact.location')}</p>
-                      <p className="font-medium">Chihuahua, México</p>
+
+                  <div className="flex items-center gap-4 p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-colors">
+                    <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
+                      <MapPin className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('contact.location')}</p>
+                      <p className="text-lg font-medium">Chihuahua, México</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
-
-            <Suspense fallback={
-              <Card>
-                <CardContent className="p-6">
-                  <div className="h-96 flex items-center justify-center">
-                    <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
-                  </div>
-                </CardContent>
-              </Card>
-            }>
-              <ContactForm />
-            </Suspense>
           </div>
         </div>
       </section>
