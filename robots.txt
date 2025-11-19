@@ -1,0 +1,27 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://daniel9romero.github.io/Portafolio/sitemap.xml
+
+# Disallow search engines from indexing certain file types
+User-agent: *
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /node_modules/
+Disallow: /src/
+
+# Allow crawling of main content
+Allow: /$
+Allow: /#home
+Allow: /#about
+Allow: /#projects
+Allow: /#skills
+Allow: /#experience
+Allow: /#research
+Allow: /#lcz-map
+Allow: /#contact
+
+# Crawl delay (optional, be respectful to servers)
+Crawl-delay: 1
