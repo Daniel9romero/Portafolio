@@ -31,6 +31,7 @@ const ProfilePhoto = lazy(() => import('./components/ProfilePhoto'));
 const Avatar3D = lazy(() => import('./components/Avatar3D'));
 const LCZMap = lazy(() => import('./components/LCZMap'));
 const InteractiveLCZMap = lazy(() => import('./components/InteractiveLCZMap'));
+const LinkedInEmbed = lazy(() => import('./components/LinkedInEmbed').then(module => ({ default: module.LinkedInEmbed })));
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -510,7 +511,19 @@ function App() {
       <section id="research" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">{t('research.title')}</h2>
-          
+
+          {/* LinkedIn Featured Post */}
+          <div className="max-w-2xl mx-auto mb-12">
+            <Suspense fallback={
+              <div className="bg-gray-200 dark:bg-gray-700 animate-pulse rounded-lg h-96"></div>
+            }>
+              <LinkedInEmbed
+                title="Publicación Destacada en LinkedIn"
+                description="Clasificación de Zonas Climáticas Locales en CDMX con 83.65% de precisión"
+              />
+            </Suspense>
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
