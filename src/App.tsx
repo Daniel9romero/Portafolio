@@ -32,6 +32,7 @@ const Avatar3D = lazy(() => import('./components/Avatar3D'));
 const LCZMap = lazy(() => import('./components/LCZMap'));
 const InteractiveLCZMap = lazy(() => import('./components/InteractiveLCZMap'));
 const LinkedInEmbed = lazy(() => import('./components/LinkedInEmbed').then(module => ({ default: module.LinkedInEmbed })));
+const ContactForm = lazy(() => import('./components/ContactForm').then(module => ({ default: module.ContactForm })));
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -589,62 +590,61 @@ function App() {
                     <Mail className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="text-sm text-gray-500">{t('contact.email')}</p>
-                      <p className="font-medium">jose.martinez@grupobafar.com</p>
+                      <a href="mailto:daniel9romero@hotmail.com" className="font-medium hover:text-blue-600 transition-colors">
+                        daniel9romero@hotmail.com
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <Linkedin className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="text-sm text-gray-500">{t('contact.linkedin')}</p>
-                      <p className="font-medium">linkedin.com/in/jose-martinez</p>
+                      <a
+                        href="https://linkedin.com/in/daniel9romero"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium hover:text-blue-600 transition-colors"
+                      >
+                        linkedin.com/in/daniel9romero
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <Github className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="text-sm text-gray-500">{t('contact.github')}</p>
-                      <p className="font-medium">github.com/josemartinez</p>
+                      <a
+                        href="https://github.com/Daniel9romero"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium hover:text-blue-600 transition-colors"
+                      >
+                        github.com/Daniel9romero
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
                     <MapPin className="h-5 w-5 text-blue-600" />
                     <div>
                       <p className="text-sm text-gray-500">{t('contact.location')}</p>
-                      <p className="font-medium">{t('contact.locationValue')}</p>
+                      <p className="font-medium">Chihuahua, México</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardContent className="p-6">
-                <form className="space-y-4">
-                  <div>
-                    <label className="text-sm font-medium">{t('contact.name')}</label>
-                    <input
-                      type="text"
-                      className="w-full mt-1 px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
-                    />
+            <Suspense fallback={
+              <Card>
+                <CardContent className="p-6">
+                  <div className="h-96 flex items-center justify-center">
+                    <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
                   </div>
-                  <div>
-                    <label className="text-sm font-medium">{t('contact.emailField')}</label>
-                    <input
-                      type="email"
-                      className="w-full mt-1 px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium">{t('contact.messageField')}</label>
-                    <textarea
-                      rows={4}
-                      className="w-full mt-1 px-3 py-2 border rounded-lg dark:bg-gray-800 dark:border-gray-700"
-                    />
-                  </div>
-                  <Button className="w-full">{t('contact.send')}</Button>
-                </form>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            }>
+              <ContactForm />
+            </Suspense>
           </div>
         </div>
       </section>
