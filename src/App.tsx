@@ -68,50 +68,10 @@ function App() {
     {
       id: 1,
       key: 'project1',
-      tech: ['Python', 'ML', 'GIS', 'Landsat'],
+      tech: ['Python', 'ML', 'GIS', 'Landsat', 'Google Earth Engine'],
       color: 'from-slate-600 to-slate-700',
       icon: Map,
       metrics: { accuracy: 83.65, dataPoints: '1M+' }
-    },
-    {
-      id: 2,
-      key: 'project2',
-      tech: ['Power BI', 'Python', 'SQL'],
-      color: 'from-blue-600 to-blue-700',
-      icon: TrendingUp,
-      metrics: { stores: 1000, roi: '250%' }
-    },
-    {
-      id: 3,
-      key: 'project3',
-      tech: ['Python', 'Web Scraping', 'NLP'],
-      color: 'from-emerald-600 to-emerald-700',
-      icon: Target,
-      metrics: { companies: 5, insights: 150 }
-    },
-    {
-      id: 4,
-      key: 'project4',
-      tech: ['R', 'Statistical Analysis'],
-      color: 'from-amber-600 to-amber-700',
-      icon: BarChart3,
-      metrics: { states: 32, categories: 15 }
-    },
-    {
-      id: 5,
-      key: 'project5',
-      tech: ['R', 'Machine Learning'],
-      color: 'from-indigo-600 to-indigo-700',
-      icon: Brain,
-      metrics: { efficiency: 2300, products: '10K+' }
-    },
-    {
-      id: 6,
-      key: 'project6',
-      tech: ['Strategic Planning', 'BI'],
-      color: 'from-gray-600 to-gray-700',
-      icon: Users,
-      metrics: { divisions: 4, initiatives: 25 }
     }
   ];
 
@@ -392,7 +352,7 @@ function App() {
             </Tabs>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-3xl mx-auto">
             <AnimatePresence>
               {filteredProjects.map((project, index) => {
                 const Icon = project.icon;
@@ -405,7 +365,7 @@ function App() {
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Card className="h-full hover:shadow-xl transition-shadow">
+                    <Card className="h-full hover:shadow-xl transition-shadow border-2">
                       <CardHeader>
                         <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center mb-4`}>
                           <Icon className="h-6 w-6 text-white" />
