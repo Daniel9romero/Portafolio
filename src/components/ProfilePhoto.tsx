@@ -82,9 +82,6 @@ export default function ProfilePhoto({
           </div>
         )}
       </div>
-
-      {/* Status indicator */}
-      <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-white dark:border-gray-800 animate-pulse" />
     </div>
   );
 }

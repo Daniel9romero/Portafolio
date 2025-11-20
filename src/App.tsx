@@ -120,12 +120,16 @@ function App() {
       }`}>
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="text-2xl font-bold text-gray-900 dark:text-white"
+              className="flex items-center gap-3"
             >
-              DR
+              <span className="text-2xl font-bold text-gray-900 dark:text-white">DR</span>
+              <div className="hidden sm:flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 rounded-full">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-xs font-medium text-green-700 dark:text-green-400">Disponible</span>
+              </div>
             </motion.div>
 
             {/* Desktop Menu */}
@@ -297,7 +301,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4">
+      <section id="about" className="py-12 px-4">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -335,7 +339,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+      <section id="projects" className="py-12 px-4 bg-gray-50 dark:bg-gray-900/50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-8">{t('projects.title')}</h2>
           
@@ -400,7 +404,7 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4">
+      <section id="skills" className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">{t('skills.title')}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -426,7 +430,7 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+      <section id="experience" className="py-12 px-4 bg-gray-50 dark:bg-gray-900/50">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">{t('experience.title')}</h2>
           <div className="max-w-4xl mx-auto">
@@ -468,7 +472,7 @@ function App() {
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 px-4">
+      <section id="research" className="py-12 px-4">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12">{t('research.title')}</h2>
 
@@ -562,7 +566,7 @@ function App() {
       </section>
 
       {/* LCZ Map Section - Interactive Visualization */}
-      <section id="lcz-map" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+      <section id="lcz-map" className="py-12 px-4 bg-gray-50 dark:bg-gray-900/50">
         <Suspense fallback={
           <div className="container mx-auto text-center py-20">
             <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4" />
@@ -574,7 +578,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+      <section id="contact" className="py-12 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center mb-4">{t('contact.title')}</h2>
           <p className="text-center text-gray-600 dark:text-gray-400 mb-12">

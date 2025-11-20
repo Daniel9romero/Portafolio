@@ -143,10 +143,10 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Let's connect for strategic collaborations",
-    "email": "Daniel9Romero@hotmail.com",
-    "linkedin": "linkedin.com/in/daniel9romero",
-    "github": "github.com/daniel9romero",
-    "location": "Chihuahua, Mexico",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Location",
     "form": {
       "name": "Name",
       "email": "Email",
