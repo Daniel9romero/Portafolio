@@ -1,0 +1,286 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "research": "Investigación",
+    "lcz-map": "Mapa LCZ",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "José Daniel López Romero",
+    "subtitle": "Head of Intelligence Center | Strategic Analytics Leader",
+    "company": "Grupo Bafar",
+    "description": "Inteligencia empresarial desde la investigación hasta la ejecución",
+    "cta": "Ver Proyectos",
+    "cta2": "Descargar CV",
+    "cards": {
+      "market": {
+        "title": "INTELIGENCIA ESTRATÉGICA DE MERCADO",
+        "subtitle": "INVESTIGACIÓN DE MERCADO INTEGRAL",
+        "description": "Capacidades de inteligencia de mercado empresarial impulsando crecimiento estratégico mediante insights autónomos basados en datos",
+        "coreCapabilities": {
+          "title": "Capacidades Clave:",
+          "items": [
+            "Investigación de mercado y segmentación profunda",
+            "Inteligencia competitiva y benchmarking",
+            "Análisis de comportamiento del consumidor",
+            "Dimensionamiento y pronóstico de mercado",
+            "Identificación de tendencias industriales",
+            "Análisis de posicionamiento estratégico"
+          ]
+        },
+        "technicalApproach": {
+          "title": "Enfoque Técnico:",
+          "items": [
+            "Procesamiento de datos en tiempo real (10K+ señales)",
+            "Modelos predictivos potenciados por ML",
+            "Monitoreo competitivo automatizado",
+            "Integración de datos multi-fuente",
+            "Reportes estratégicos ejecutivos"
+          ]
+        }
+      },
+      "efficiency": {
+        "title": "EFICIENCIA OPERACIONAL",
+        "metric": "2300%",
+        "subtitle": "GANANCIA DE VELOCIDAD",
+        "description": "Optimización de sistemas críticos mediante refactorización Python y automatización de procesos",
+        "coreCapabilities": {
+          "title": "Capacidades Clave:",
+          "items": [
+            "Reestructuración de sistemas",
+            "Optimización de código y arquitectura",
+            "Diseño de pipelines eficientes",
+            "Reducción de cuellos de botella",
+            "Escalabilidad de infraestructura",
+            "Performance tuning & profiling"
+          ]
+        },
+        "technicalApproach": {
+          "title": "Enfoque Técnico:",
+          "items": [
+            "Procesamiento: 8 horas → 20 minutos",
+            "Optimización de pipeline API",
+            "Refactorización orientada a resultados",
+            "Automatización de procesos repetitivos",
+            "Impacto medible a nivel empresarial"
+          ]
+        }
+      },
+      "automation": {
+        "title": "AUTOMATIZACIÓN INTELIGENTE",
+        "metric": "-70%",
+        "subtitle": "TRABAJO MANUAL",
+        "description": "Reducción de análisis manual mediante sistemas de IA agéntica y automatización de flujos de trabajo",
+        "coreCapabilities": {
+          "title": "Capacidades Clave:",
+          "items": [
+            "Diseño de arquitecturas RAG",
+            "Implementación de agentes autónomos",
+            "Orquestación de workflows complejos",
+            "Integración de LLMs empresariales",
+            "Sistemas auto-actualizables",
+            "Adopción cross-funcional de soluciones"
+          ]
+        },
+        "technicalApproach": {
+          "title": "Enfoque Técnico:",
+          "items": [
+            "Plataformas de inteligencia auto-actualizables",
+            "Procesamiento automatizado de insights",
+            "n8n & API orchestration",
+            "Reducción de intervención humana",
+            "Escalabilidad multi-departamental"
+          ]
+        }
+      },
+      "research": {
+        "title": "INVESTIGACIÓN E INNOVACIÓN",
+        "subtitle": "PERFIL DE INVESTIGACIÓN MULTIDISCIPLINARIA",
+        "description": "Investigador activo combinando analítica aplicada con rigor académico a través de múltiples dominios",
+        "recentWork": {
+          "title": "Trabajo reciente:",
+          "items": [
+            "ML en clima urbano (84% precisión)",
+            "Business intelligence predictiva",
+            "Metodologías de análisis geoespacial"
+          ]
+        },
+        "interests": {
+          "title": "Intereses de investigación:",
+          "items": [
+            "Aplicaciones de machine learning",
+            "Sistemas de pronóstico estratégico",
+            "Sensores remotos & análisis espacial",
+            "Analítica organizacional"
+          ]
+        },
+        "collaboration": "Abierto a colaboraciones de investigación"
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "content1": "Lidero el Centro de Inteligencia en Grupo Bafar, donde transformo datos en decisiones estratégicas para una de las empresas alimenticias más grandes de México. Mi trabajo combina la rigurosidad analítica con la visión de negocio: diseño sistemas que automatizan lo repetitivo para que los equipos se enfoquen en lo que importa.",
+    "content2": "Mi formación académica me llevó por Brasil, Colombia y Argentina, culminando en una Maestría en Ciencia de Datos e Inteligencia de Negocios. Mi tesis exploró la intersección entre climatología urbana y machine learning, una muestra de cómo busco aplicar técnicas avanzadas a problemas no convencionales.",
+    "content3": "Mi enfoque se centra en hacer que la inteligencia de datos sea accesible para la toma de decisiones estratégicas, con la versatilidad técnica para abordar desde automatización de procesos hasta modelado y cualquier desafío que el negocio requiera.",
+    "showMore": "Conocer Más",
+    "showLess": "Mostrar Menos",
+    "expanded": {
+      "impact": {
+        "title": "Resultados Orientados al Negocio",
+        "description": "Desarrollo de iniciativas que incrementan oportunidades de mercado, optimizan tiempos de procesamiento y automatizan flujos de análisis mediante sistemas inteligentes y metodologías ágiles."
+      },
+      "research": {
+        "title": "Innovación Aplicada",
+        "description": "Enfoque en resolver problemas complejos mediante la combinación de técnicas avanzadas de análisis, machine learning y metodologías de investigación adaptadas al contexto empresarial."
+      },
+      "leadership": {
+        "title": "Liderazgo Multisectorial",
+        "description": "Experiencia gestionando equipos técnicos en sectores alimenticio, retail y gobierno, implementando transformación digital y democratizando el acceso a insights basados en datos para la toma de decisiones estratégicas a nivel C-suite."
+      }
+    }
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "filter": "Filtrar por tecnología",
+    "all": "Todos",
+    "viewDetails": "Ver Detalles",
+    "viewGithub": "Ver Código",
+    "project1": {
+      "title": "Clasificación LCZ Ciudad de México",
+      "description": "Sistema de clasificación de zonas climáticas urbanas usando Gradient Tree Boost y Landsat 9",
+      "achievement": "83.65% de precisión con algoritmos de ML"
+    },
+    "project2": {
+      "title": "Expansión Retail 2030",
+      "description": "Modelo predictivo y dashboard interactivo para expansión a 1,000 tiendas",
+      "achievement": "Análisis de escenarios y proyecciones financieras completas"
+    },
+    "project3": {
+      "title": "Inteligencia Competitiva",
+      "description": "Benchmarking contra Sigma Alimentos y Qualtia con enfoque en digitalización",
+      "achievement": "Análisis profundo de capacidades tecnológicas y ventajas competitivas"
+    },
+    "project4": {
+      "title": "Análisis de Mercado Embutidos",
+      "description": "Modelos de consumo per cápita y proyecciones estado por estado para México",
+      "achievement": "Insights estratégicos para expansión de categorías"
+    },
+    "project5": {
+      "title": "Sistema de Agentes IA de Inteligencia de Mercado",
+      "description": "Sistema automatizado usando arquitectura RAG y agentes inteligentes para análisis de mercado en tiempo real",
+      "achievement": "Reducción del 70% en tiempo de análisis manual"
+    },
+    "project6": {
+      "title": "Expansión Estratégica de Mercado mediante Analítica Geoespacial",
+      "description": "Dashboard geoespacial para identificar zonas de alto potencial comercial y optimizar rutas de distribución",
+      "achievement": "Reducción del 20% en costos operativos y aumento del 35% en cobertura de mercado"
+    },
+    "confidential": {
+      "label": "Proyecto confidencial",
+      "moreInfo": "Más información",
+      "cta": "Conversemos",
+      "interest": "¿Te interesa algo similar?"
+    },
+    "confidential1": {
+      "title": "Motor de Pronóstico de Demanda",
+      "description": "Modelo predictivo de demanda multi-categoría con series de tiempo",
+      "status": "Proyecto implementado"
+    },
+    "confidential2": {
+      "title": "Inteligencia de Rutas Adaptativa",
+      "description": "Optimización logística con respuesta dinámica a incidentes",
+      "status": "En desarrollo"
+    },
+    "confidential3": {
+      "title": "Radar de Oportunidades Inmobiliarias",
+      "description": "Detección temprana de oportunidades inmobiliarias con IA",
+      "status": "En desarrollo"
+    },
+    "confidential4": {
+      "title": "Hub de Inteligencia Empresarial",
+      "description": "Centro de inteligencia empresarial automatizado con RAG",
+      "status": "En desarrollo"
+    }
+  },
+  "skills": {
+    "title": "Stack Tecnológico",
+    "categories": {
+      "languages": "Core Languages",
+      "biAnalytics": "BI & Analytics",
+      "aiMl": "AI & Machine Learning",
+      "dataEngineering": "Data Engineering",
+      "geospatial": "Geospatial & Remote Sensing",
+      "leadership": "Leadership & Strategy"
+    }
+  },
+  "experience": {
+    "title": "Trayectoria Profesional",
+    "job1": {
+      "title": "Jefe del Centro de Inteligencia",
+      "company": "Grupo Bafar",
+      "period": "Nov 2024 - Presente",
+      "location": "Chihuahua, México",
+      "description": "Dirijo el Centro de Inteligencia con equipos multidisciplinarios de BI e investigación de mercados. Responsable de la estrategia de datos para todas las divisiones del grupo (Alimentos, Retail, Food Service, Internacional). Implementación de sistemas de IA agéntica que redujeron 70% el análisis manual y generaron nuevas oportunidades de mercado.",
+      "highlights": ["Liderazgo de equipos", "Estrategia multi-división", "IA & Automatización"]
+    },
+    "job2": {
+      "title": "Analista de Datos Senior",
+      "company": "Quién es quién",
+      "period": "Oct 2022 - Oct 2024",
+      "location": "Remoto",
+      "description": "Lideré iniciativas de optimización de procesos que incrementaron la eficiencia operativa en 18%. Desarrollo de dashboards ejecutivos para toma de decisiones y arquitectura de pipelines de datos que redujeron tiempos de procesamiento en 2300%.",
+      "highlights": ["+18% eficiencia", "Dashboards C-level", "Arquitectura de datos"]
+    },
+    "job3": {
+      "title": "Analista de Datos",
+      "company": "Sedena (Plan DN-III)",
+      "period": "Nov 2021 - Sep 2022",
+      "location": "CDMX, México",
+      "description": "Optimización de asignación de recursos en operaciones de apoyo civil con presupuestos millonarios. Coordinación transversal con proveedores, logística y finanzas. Desarrollo de modelos de análisis que mejoraron la eficiencia en distribución de ayuda.",
+      "highlights": ["Sector gobierno", "Presupuestos críticos", "Coordinación multiárea"]
+    },
+    "job4": {
+      "title": "Analista de Inteligencia Electoral",
+      "company": "PT Nacional",
+      "period": "Ene 2021 - Jun 2021",
+      "location": "CDMX, México",
+      "description": "Desarrollo de estrategias de captación basadas en datos para campañas electorales federales. Análisis de KPIs de engagement, segmentación de audiencias y optimización de inversión en medios digitales.",
+      "highlights": ["Campañas federales", "Segmentación avanzada", "ROI en medios"]
+    }
+  },
+  "research": {
+    "title": "Investigación & Publicaciones",
+    "thesis": {
+      "title": "Clasificación de Zonas Climáticas Locales en la Ciudad de México",
+      "description": "Usando algoritmos de Machine Learning y imágenes satelitales Landsat 9",
+      "status": "En finalización - 83.65% de precisión alcanzada"
+    },
+    "interests": {
+      "title": "Intereses de Investigación",
+      "item1": "Climatología Urbana",
+      "item2": "Machine Learning Aplicado",
+      "item3": "Teledetección Satelital",
+      "item4": "Inteligencia de Negocios"
+    },
+    "phd": "Explorando activamente oportunidades de doctorado en programas internacionales"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Conectemos para colaboraciones estratégicas",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Ubicación",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje",
+      "send": "Enviar"
+    }
+  }
+}

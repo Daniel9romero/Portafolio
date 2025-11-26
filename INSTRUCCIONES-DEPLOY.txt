@@ -1,0 +1,144 @@
+═══════════════════════════════════════════════════════════════
+  🚀 INSTRUCCIONES PARA SUBIR TU PORTAFOLIO A GITHUB PAGES
+═══════════════════════════════════════════════════════════════
+
+✅ YA ESTÁ HECHO:
+- ✓ Tu foto de perfil integrada (public/profile-photo.jpg)
+- ✓ Repositorio Git inicializado
+- ✓ Primer commit creado
+- ✓ GitHub Actions configurado
+- ✓ Todo listo para deploy
+
+═══════════════════════════════════════════════════════════════
+
+📋 PASOS A SEGUIR (OPCIÓN 1 - RECOMENDADA):
+
+═══════════════════════════════════════════════════════════════
+PASO 1: CREAR REPOSITORIO EN GITHUB
+═══════════════════════════════════════════════════════════════
+
+1. Abre tu navegador y ve a: https://github.com
+
+2. Haz clic en el botón "+" (arriba a la derecha)
+
+3. Selecciona "New repository"
+
+4. Configura tu repositorio:
+   - Repository name: portafolio
+   - Description: Mi portafolio personal con mapa LCZ de CDMX
+   - Public (seleccionado)
+   - NO marques "Add a README file"
+   - NO marques "Add .gitignore"
+   - NO marques "Choose a license"
+
+5. Haz clic en "Create repository"
+
+6. COPIA LA URL que aparece (algo como):
+   https://github.com/TU-USUARIO/portafolio.git
+
+   (Reemplaza TU-USUARIO con tu nombre de usuario real)
+
+═══════════════════════════════════════════════════════════════
+PASO 2: CONECTAR Y SUBIR TU CÓDIGO
+═══════════════════════════════════════════════════════════════
+
+Abre la terminal/PowerShell en esta carpeta y ejecuta:
+
+git remote add origin https://github.com/TU-USUARIO/portafolio.git
+
+(Reemplaza TU-USUARIO con tu nombre de usuario de GitHub)
+
+Luego ejecuta:
+
+git push -u origin main
+
+Te pedirá tu usuario y contraseña de GitHub.
+
+═══════════════════════════════════════════════════════════════
+PASO 3: HABILITAR GITHUB PAGES
+═══════════════════════════════════════════════════════════════
+
+1. En tu repositorio de GitHub, haz clic en "Settings" (Configuración)
+
+2. En el menú lateral izquierdo, busca y haz clic en "Pages"
+
+3. En "Build and deployment", en la sección "Source":
+   - Selecciona: "GitHub Actions"
+   - (NO selecciones "Deploy from a branch")
+
+4. ¡No necesitas guardar nada! Se guarda automáticamente.
+
+═══════════════════════════════════════════════════════════════
+PASO 4: VERIFICAR EL DEPLOY
+═══════════════════════════════════════════════════════════════
+
+1. Ve a la pestaña "Actions" en tu repositorio
+
+2. Verás un workflow ejecutándose: "Deploy to GitHub Pages"
+
+3. Espera 2-3 minutos a que termine
+
+4. Cuando veas el ✅ verde, tu sitio estará listo
+
+═══════════════════════════════════════════════════════════════
+PASO 5: VER TU PORTAFOLIO EN VIVO
+═══════════════════════════════════════════════════════════════
+
+Tu portafolio estará disponible en:
+
+https://TU-USUARIO.github.io/portafolio
+
+(Reemplaza TU-USUARIO con tu nombre de usuario de GitHub)
+
+═══════════════════════════════════════════════════════════════
+
+🎉 ¡LISTO! TU PORTAFOLIO ESTÁ EN LÍNEA
+
+═══════════════════════════════════════════════════════════════
+
+📝 PARA ACTUALIZAR TU PORTAFOLIO EN EL FUTURO:
+
+Cada vez que hagas cambios:
+
+1. git add .
+2. git commit -m "Descripción de tus cambios"
+3. git push
+
+El deploy se ejecutará automáticamente.
+
+═══════════════════════════════════════════════════════════════
+
+🆘 SI TIENES PROBLEMAS:
+
+1. Error "remote origin already exists":
+   git remote remove origin
+   git remote add origin https://github.com/TU-USUARIO/portafolio.git
+
+2. GitHub pide contraseña pero no funciona:
+   Necesitas usar un "Personal Access Token":
+   - Ve a GitHub → Settings → Developer settings → Personal access tokens
+   - Generate new token (classic)
+   - Marca "repo" y "workflow"
+   - Úsalo como contraseña
+
+3. El sitio no aparece:
+   - Espera 5-10 minutos
+   - Verifica que el workflow en Actions haya terminado con ✅
+   - Verifica en Settings → Pages que diga "GitHub Actions"
+
+═══════════════════════════════════════════════════════════════
+
+📁 ARCHIVOS IMPORTANTES:
+
+- public/profile-photo.jpg = Tu foto de perfil
+- src/locales/es.json = Tu información personal (español)
+- src/locales/en.json = Tu información personal (inglés)
+- src/locales/pt.json = Tu información personal (portugués)
+- README.md = Documentación del proyecto
+- DEPLOY.md = Guía detallada de deploy
+
+═══════════════════════════════════════════════════════════════
+
+¡Mucha suerte con tu portafolio! 🚀
+
+═══════════════════════════════════════════════════════════════
