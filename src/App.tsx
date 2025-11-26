@@ -442,12 +442,12 @@ function App() {
                   <DropdownMenuContent>
                     <DropdownMenuItem asChild>
                       <a href={`${import.meta.env.BASE_URL}cv-espanol.pdf`} download="CV-Daniel-Romero-ESP.pdf">
-                        🇪🇸 Español
+                        🇲🇽 Español
                       </a>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
                       <a href={`${import.meta.env.BASE_URL}cv-english.pdf`} download="CV-Daniel-Romero-ENG.pdf">
-                        🇬🇧 English
+                        🇺🇸 English
                       </a>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
