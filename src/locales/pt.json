@@ -124,26 +124,19 @@
   },
   "about": {
     "title": "Sobre Mim",
-    "content1": "Lidero o Centro de Inteligência de Negócios (CIB) no Grupo Bafar, supervisionando operações de BI em todas as divisões: Alimentos, Varejo, Food Service e Internacional/Exportação.",
-    "content2": "Mestrado em Ciência de Dados e Inteligência de Negócios com intercâmbios acadêmicos internacionais no Brasil, Colômbia e México. Atualmente finalizando minha tese sobre classificação de zonas climáticas locais na Cidade do México usando algoritmos de ML e Landsat 9.",
-    "content3": "Meu trabalho combina liderança estratégica com expertise técnica profunda, alcançando melhorias de eficiência de 2300% em processos críticos de negócios.",
-    "preview": "Especialista em transformar dados em decisões estratégicas, combinando experiência técnica profunda com visão de negócio para impulsionar a inovação organizacional.",
+    "content1": "Lidero o Centro de Inteligência no Grupo Bafar, onde transformo dados em decisões estratégicas para uma das maiores empresas alimentícias do México. Meu trabalho combina rigor analítico com visão de negócio: desenho sistemas que automatizam o repetitivo para que as equipes se concentrem no que importa.",
+    "content2": "Minha formação acadêmica me levou pelo Brasil, Colômbia e Argentina, culminando em um Mestrado em Ciência de Dados e Inteligência de Negócios. Minha tese explorou a interseção entre climatologia urbana e machine learning, mostrando como aplico técnicas avançadas a problemas não convencionais.",
+    "content3": "Meu foco é tornar a inteligência de dados acessível para tomada de decisões estratégicas, com versatilidade técnica para abordar desde automação de processos até modelagem e qualquer desafio que o negócio exija.",
     "showMore": "Conhecer Mais",
     "showLess": "Mostrar Menos",
-    "stats": {
-      "accuracy": "84% Precisão",
-      "market": "+15% Mercado",
-      "efficiency": "2300% Eficiência",
-      "automation": "70% Automação"
-    },
     "expanded": {
       "impact": {
-        "title": "Impacto Mensurável no Negócio",
-        "description": "Liderança de iniciativas que geraram incremento de 15% em oportunidades de mercado, melhoria de 2300% em eficiência de processamento, e automação de 70% de análises manuais através de sistemas de IA agêntica e workflows inteligentes."
+        "title": "Resultados Orientados ao Negócio",
+        "description": "Desenvolvimento de iniciativas que aumentam oportunidades de mercado, otimizam tempos de processamento e automatizam fluxos de análise através de sistemas inteligentes e metodologias ágeis."
       },
       "research": {
-        "title": "Perfil de Pesquisa Aplicada",
-        "description": "Pesquisa multidisciplinar em climatologia urbana, machine learning aplicado, sensoriamento remoto satelital e inteligência de negócios estratégica, com foco em resolver problemas reais do setor empresarial e urbano."
+        "title": "Inovação Aplicada",
+        "description": "Foco em resolver problemas complexos combinando técnicas avançadas de análise, machine learning e metodologias de pesquisa adaptadas ao contexto empresarial."
       },
       "leadership": {
         "title": "Liderança Multissetorial",
@@ -162,71 +155,41 @@
       "description": "Sistema de classificação de zonas climáticas urbanas usando Gradient Tree Boost e Landsat 9",
       "achievement": "83.65% de precisão com algoritmos de ML"
     },
-    "project2": {
-      "title": "Expansão Varejo 2030",
-      "description": "Modelo preditivo e dashboard interativo para expansão de 1.000 lojas",
-      "achievement": "Análise completa de cenários e projeções financeiras"
-    },
-    "project3": {
-      "title": "Inteligência Competitiva",
-      "description": "Benchmarking contra Sigma Alimentos e Qualtia focando em digitalização",
-      "achievement": "Análise profunda de capacidades tecnológicas e vantagens competitivas"
-    },
-    "project4": {
-      "title": "Análise de Mercado de Embutidos",
-      "description": "Modelos de consumo per capita e projeções estado por estado para o México",
-      "achievement": "Insights estratégicos para expansão de categoria"
-    },
-    "project5": {
-      "title": "Classificação de Produtos Cárneos",
-      "description": "Sistema automatizado em R para catalogação de produtos",
-      "achievement": "Melhoria de 2300% na eficiência de processamento"
-    },
-    "project6": {
-      "title": "Planejamento Estratégico 2026",
-      "description": "Pesquisa abrangente para iniciativas de transformação digital",
-      "achievement": "Roadmap completo para todas as divisões do Grupo Bafar"
-    },
     "confidential": {
-      "label": "Confidential project",
-      "moreInfo": "More info",
-      "cta": "Let's connect",
-      "interest": "Interested in something similar?"
+      "label": "Projeto confidencial",
+      "moreInfo": "Mais informação",
+      "cta": "Vamos conversar",
+      "interest": "Interessado em algo similar?"
     },
     "confidential1": {
-      "title": "Demand Forecasting Engine",
-      "description": "Multi-category predictive demand model with time series",
-      "status": "Implemented project"
+      "title": "Motor de Previsão de Demanda",
+      "description": "Modelo preditivo de demanda multi-categoria com séries temporais",
+      "status": "Projeto implementado"
     },
     "confidential2": {
-      "title": "Adaptive Route Intelligence",
-      "description": "Logistics optimization with dynamic incident response",
-      "status": "In development"
+      "title": "Inteligência de Rotas Adaptativa",
+      "description": "Otimização logística com resposta dinâmica a incidentes",
+      "status": "Em desenvolvimento"
     },
     "confidential3": {
-      "title": "Real Estate Opportunity Radar",
-      "description": "Early detection of real estate opportunities with AI",
-      "status": "In development"
+      "title": "Radar de Oportunidades Imobiliárias",
+      "description": "Detecção antecipada de oportunidades imobiliárias com IA",
+      "status": "Em desenvolvimento"
     },
     "confidential4": {
-      "title": "Enterprise Intelligence Hub",
-      "description": "Automated business intelligence center with RAG",
-      "status": "In development"
+      "title": "Hub de Inteligência Empresarial",
+      "description": "Centro de inteligência empresarial automatizado com RAG",
+      "status": "Em desenvolvimento"
     }
   },
   "skills": {
     "title": "Stack Tecnológico",
     "categories": {
-      "languages": "Linguagens de Programação",
-      "analysis": "Tipos de Análise",
-      "bi": "Business Intelligence",
-      "modeling": "Modelagem & Analytics",
-      "machineLearning": "Machine Learning",
-      "ai": "Inteligência Artificial",
-      "gis": "Geoespacial & Sensoriamento Remoto",
-      "devops": "DevOps & Automação",
-      "cloud": "Cloud & Big Data",
-      "visualization": "Visualização Avançada",
+      "languages": "Core Languages",
+      "biAnalytics": "BI & Analytics",
+      "aiMl": "AI & Machine Learning",
+      "dataEngineering": "Data Engineering",
+      "geospatial": "Geoespacial & Sensoriamento Remoto",
       "leadership": "Liderança & Estratégia"
     }
   },
@@ -272,10 +235,6 @@
       "description": "Usando algoritmos de Machine Learning e imagens de satélite Landsat 9",
       "status": "Em finalização - 83.65% de precisão alcançada"
     },
-    "conference": {
-      "title": "CIMA 2025",
-      "description": "Apresentação sobre sensoriamento remoto urbano e climatologia"
-    },
     "interests": {
       "title": "Interesses de Pesquisa",
       "item1": "Climatologia Urbana",
@@ -292,11 +251,11 @@
     "linkedin": "LinkedIn",
     "github": "GitHub",
     "location": "Localização",
-    "locationValue": "San José del Cabo, México",
-    "message": "Enviar Mensagem",
-    "name": "Nome",
-    "emailField": "Email",
-    "messageField": "Mensagem",
-    "send": "Enviar"
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "send": "Enviar"
+    }
   }
 }

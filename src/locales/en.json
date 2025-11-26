@@ -124,30 +124,23 @@
   },
   "about": {
     "title": "About Me",
-    "content1": "I lead the BI team and market research division at Grupo Bafar, implementing predictive analytics for strategic planning.",
-    "content2": "Master's in Data Science and Business Intelligence (Dual Degree) from UPAEP Mexico & Universidad Siglo XXI Argentina. My thesis on Local Climate Zone classification using Gradient Boosting Forest achieved 84% accuracy, surpassing international standards through remote sensing and ML integration.",
-    "content3": "Specialized in agentic AI, automation workflows, and predictive market research. I've achieved 2300% efficiency improvements in catalog processing and 30% reduction in processing times through n8n automation and API pipeline optimization.",
-    "preview": "Specialist in transforming data into strategic decisions, combining deep technical expertise with business vision to drive organizational innovation.",
+    "content1": "I lead the Intelligence Center at Grupo Bafar, where I transform data into strategic decisions for one of Mexico's largest food companies. My work combines analytical rigor with business vision: I design systems that automate the repetitive so teams can focus on what matters.",
+    "content2": "My academic journey took me through Brazil, Colombia, and Argentina, culminating in a Master's in Data Science and Business Intelligence. My thesis explored the intersection of urban climatology and machine learning, showcasing how I apply advanced techniques to unconventional problems.",
+    "content3": "My focus is on making data intelligence accessible for strategic decision-making, with the technical versatility to tackle everything from process automation to modeling and any challenge the business requires.",
     "showMore": "Learn More",
     "showLess": "Show Less",
-    "stats": {
-      "accuracy": "84% Accuracy",
-      "market": "+15% Market",
-      "efficiency": "2300% Efficiency",
-      "automation": "70% Automation"
-    },
     "expanded": {
       "impact": {
-        "title": "Measurable Business Impact",
-        "description": "Leadership of initiatives that generated 15% increase in market opportunities, 2300% improvement in processing efficiency, and 70% automation of manual analyses through agentic AI systems and intelligent workflows."
+        "title": "Business-Oriented Results",
+        "description": "Development of initiatives that increase market opportunities, optimize processing times, and automate analysis workflows through intelligent systems and agile methodologies."
       },
       "research": {
-        "title": "Applied Research Profile",
-        "description": "Multidisciplinary research in urban climatology, applied machine learning, satellite remote sensing, and strategic business intelligence, focused on solving real-world problems in business and urban sectors."
+        "title": "Applied Innovation",
+        "description": "Focus on solving complex problems by combining advanced analysis techniques, machine learning, and research methodologies adapted to the business context."
       },
       "leadership": {
         "title": "Multisector Leadership",
-        "description": "Experience managing technical teams across food, retail, and government sectors, implementing digital transformation and democratizing access to data-driven insights for C-suite strategic decision-making."
+        "description": "Experience managing technical teams in food, retail, and government sectors, implementing digital transformation and democratizing access to data-driven insights for C-suite strategic decision-making."
       }
     }
   },
@@ -162,35 +155,10 @@
       "description": "Urban climate zone classification system using Gradient Tree Boost and Landsat 9",
       "achievement": "83.65% accuracy with ML algorithms"
     },
-    "project2": {
-      "title": "Retail Expansion 2030",
-      "description": "Predictive model and interactive dashboard for 1,000 stores expansion",
-      "achievement": "Complete scenario analysis and financial projections"
-    },
-    "project3": {
-      "title": "Competitive Intelligence",
-      "description": "Benchmarking against Sigma Alimentos and Qualtia focusing on digitalization",
-      "achievement": "Deep analysis of technological capabilities and competitive advantages"
-    },
-    "project4": {
-      "title": "Meat Products Market Analysis",
-      "description": "Per capita consumption models and state-by-state projections for Mexico",
-      "achievement": "Strategic insights for category expansion"
-    },
-    "project5": {
-      "title": "Market Intelligence AI Agent System",
-      "description": "Autonomous agentic AI system using RAG architecture for real-time market analysis",
-      "achievement": "70% reduction in manual analysis time"
-    },
-    "project6": {
-      "title": "Strategic Market Expansion Through Geospatial Analytics",
-      "description": "Geospatial dashboard to identify high-potential commercial zones and optimize distribution routes",
-      "achievement": "20% operational cost reduction and 35% market coverage increase"
-    },
     "confidential": {
       "label": "Confidential project",
       "moreInfo": "More info",
-      "cta": "Let's connect",
+      "cta": "Let's talk",
       "interest": "Interested in something similar?"
     },
     "confidential1": {
@@ -217,16 +185,11 @@
   "skills": {
     "title": "Technology Stack",
     "categories": {
-      "languages": "Programming Languages",
-      "analysis": "Analysis Types",
-      "bi": "Business Intelligence",
-      "modeling": "Modeling & Analytics",
-      "machineLearning": "Machine Learning",
-      "ai": "Artificial Intelligence",
-      "gis": "Geospatial & Remote Sensing",
-      "devops": "DevOps & Automation",
-      "cloud": "Cloud & Big Data",
-      "visualization": "Advanced Visualization",
+      "languages": "Core Languages",
+      "biAnalytics": "BI & Analytics",
+      "aiMl": "AI & Machine Learning",
+      "dataEngineering": "Data Engineering",
+      "geospatial": "Geospatial & Remote Sensing",
       "leadership": "Leadership & Strategy"
     }
   },
