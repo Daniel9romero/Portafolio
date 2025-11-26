@@ -51,55 +51,12 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
     <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Left side - Text content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center md:text-left"
-          >
-            <Badge className="mb-4 px-4 py-2" variant="secondary">
-              {t('hero.company')}
-            </Badge>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              {t('hero.title')}
-            </h1>
-            <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-6">
-              {t('hero.subtitle')}
-            </h2>
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8">
-              {t('hero.description')}
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button size="lg" className="gap-2 w-full sm:w-auto">
-                {t('hero.cta')} <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
-                <Download className="h-4 w-4" /> {t('hero.cta2')}
-              </Button>
-            </div>
-
-            {/* Photo/Avatar Toggle */}
-            <div className="mt-6 flex gap-2 justify-center md:justify-start">
-              <Button
-                size="sm"
-                variant="ghost"
-                onClick={() => setShowAvatar(!showAvatar)}
-                className="gap-2"
-              >
-                <Box className="h-4 w-4" />
-                {showAvatar ? 'Ver Foto' : 'Ver Avatar 3D'}
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Right side - Photo or 3D Avatar */}
+          {/* Photo or 3D Avatar - Aparece primero en móvil */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative order-first md:order-last"
           >
             {showAvatar ? (
               <div className="h-96 w-full rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900">
@@ -127,6 +84,49 @@ export function HeroSection({ darkMode }: HeroSectionProps) {
                 />
               </div>
             )}
+          </motion.div>
+
+          {/* Text content - Aparece segundo en móvil */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center md:text-left order-last md:order-first"
+          >
+            <Badge className="mb-4 px-4 py-2" variant="secondary">
+              {t('hero.company')}
+            </Badge>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              {t('hero.title')}
+            </h1>
+            <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-6">
+              {t('hero.subtitle')}
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 mb-8">
+              {t('hero.description')}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <Button size="lg" className="gap-2 w-full sm:w-auto">
+                {t('hero.cta')} <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
+                <Download className="h-4 w-4" /> {t('hero.cta2')}
+              </Button>
+            </div>
+
+            {/* Photo/Avatar Toggle */}
+            <div className="mt-6 flex gap-2 justify-center md:justify-start">
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => setShowAvatar(!showAvatar)}
+                className="gap-2"
+              >
+                <Box className="h-4 w-4" />
+                {showAvatar ? 'Ver Foto' : 'Ver Avatar 3D'}
+              </Button>
+            </div>
           </motion.div>
         </div>
 

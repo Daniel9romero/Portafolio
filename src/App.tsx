@@ -374,19 +374,19 @@ function App() {
 
         <div className="container mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left side - Photo/Avatar */}
+            {/* Left side - Photo/Avatar (solo visible en desktop) */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="order-2 lg:order-1"
+              className="hidden lg:block"
             >
               <div className="relative">
                 <Suspense fallback={
                   <div className="w-64 h-64 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse">
                   </div>
                 }>
-                  <ProfilePhoto 
+                  <ProfilePhoto
                     initialImage={profileImage}
                     onImageChange={setProfileImage}
                   />
@@ -399,18 +399,32 @@ function App() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left order-1 lg:order-2"
+              className="text-center lg:text-left"
             >
               <Badge className="mb-4 px-4 py-2" variant="secondary">
                 {t('hero.company')}
               </Badge>
+
+              {/* Foto en móvil - entre badge y nombre */}
+              <div className="lg:hidden flex justify-center mb-4">
+                <Suspense fallback={
+                  <div className="w-48 h-48 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse">
+                  </div>
+                }>
+                  <ProfilePhoto
+                    initialImage={profileImage}
+                    onImageChange={setProfileImage}
+                  />
+                </Suspense>
+              </div>
+
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-gray-900 dark:text-white">
                 {t('hero.title')}
               </h1>
               <h2 className="text-lg sm:text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-300 mb-4">
                 {t('hero.subtitle')}
               </h2>
-              <p className="text-base text-gray-500 dark:text-gray-400 mb-8 max-w-lg">
+              <p className="text-base text-gray-500 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
                 {t('hero.description')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
