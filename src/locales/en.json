@@ -257,5 +257,186 @@
       "message": "Message",
       "send": "Send"
     }
+  },
+  "languageSelector": {
+    "label": "Language"
+  },
+  "lczMap": {
+    "badge": "Master's Thesis",
+    "title": "Local Climate Zone Classification",
+    "subtitle": "Mexico City - 2,226 km²",
+    "accuracy": "Accuracy",
+    "kappa": "Kappa",
+    "classes": "LCZ Classes",
+    "geotiffLoaded": "GeoTIFF Loaded",
+    "stats": {
+      "images": "Satellite Images",
+      "variables": "Predictor Variables",
+      "pixels": "Classified Pixels"
+    },
+    "map": {
+      "title": "Interactive LCZ Map",
+      "hide": "Hide",
+      "show": "Show",
+      "panel": "Panel",
+      "view": "View",
+      "mapView": "Map",
+      "satellite": "Satellite",
+      "loading": "Loading GeoTIFF classification..."
+    },
+    "tabs": {
+      "legend": "Legend",
+      "methodology": "Methodology"
+    },
+    "legend": {
+      "title": "LCZ Classes",
+      "urban": "Urban Zones",
+      "natural": "Natural Zones"
+    },
+    "methodology": {
+      "satelliteData": "Satellite Data",
+      "sensor": "Sensor",
+      "resolution": "Resolution",
+      "period": "Period",
+      "images": "Images",
+      "area": "Area",
+      "variables": "Variables",
+      "spectralBands": "Spectral Bands",
+      "indices": "Indices",
+      "topographic": "Topographic",
+      "training": "Training",
+      "samples": "Samples",
+      "split": "Split",
+      "validation": "Validation",
+      "crossValidation": "Triple cross-validation (seeds: 123, 456, 789)"
+    },
+    "algorithms": {
+      "title": "ML Algorithm Comparison",
+      "description": "6 algorithms evaluated - GTB outperforms Random Forest by +3.44%"
+    },
+    "lczTypes": {
+      "1": {
+        "name": "Compact High-rise",
+        "description": "Dense mix of tall buildings (+25m). High-density financial and commercial district.",
+        "climate": "High solar absorption, significant nighttime heat retention, intense heat island.",
+        "examples": "Reforma-Polanco Corridor, Santa Fe"
+      },
+      "2": {
+        "name": "Compact Midrise",
+        "description": "3-9 story buildings with dense configuration. Consolidated residential areas.",
+        "climate": "High surface temperature, moderate-high heat retention.",
+        "examples": "Historic Center, Roma Norte, Doctores"
+      },
+      "3": {
+        "name": "Compact Low-rise",
+        "description": "1-3 story structures densely grouped. Traditional neighborhoods.",
+        "climate": "Significant daytime heating, faster nighttime cooling.",
+        "examples": "Tepito, La Merced, popular neighborhoods"
+      },
+      "4": {
+        "name": "Open High-rise",
+        "description": "Isolated towers with ample green spaces between buildings.",
+        "climate": "Lower thermal intensity, better ventilation, vegetation cooling.",
+        "examples": "Tlatelolco, Torres de Mixcoac"
+      },
+      "5": {
+        "name": "Open Midrise",
+        "description": "Balance between built surface and open spaces. BEST urban performance.",
+        "climate": "Moderate temperature, significant evapotranspirative cooling.",
+        "examples": "Modern housing units, Coyoacán"
+      },
+      "6": {
+        "name": "Open Low-rise",
+        "description": "Single-family homes with gardens. Typical residential suburb.",
+        "climate": "Low surface temperature, high cooling potential.",
+        "examples": "Pedregal, Jardines del Pedregal"
+      },
+      "7": {
+        "name": "Lightweight Low-rise",
+        "description": "Lightweight structures: markets, informal settlements. Variable materials.",
+        "climate": "High metallic reflectance, rapid heating/cooling.",
+        "examples": "Informal settlements, street markets"
+      },
+      "8": {
+        "name": "Large Low-rise",
+        "description": "Industrial buildings, shopping centers, warehouses. HIGHEST heat island intensities.",
+        "climate": "Large absorbing surfaces, minimal vegetation. Mitigation priority.",
+        "examples": "Central de Abastos, Vallejo Industrial Zone"
+      },
+      "9": {
+        "name": "Sparsely Built",
+        "description": "Scattered layout in natural environment. WORST classification performance.",
+        "climate": "Urban-rural transition, highly variable microclimates.",
+        "examples": "Peripheries, scattered Xochimilco, Milpa Alta"
+      },
+      "A": {
+        "name": "Dense Trees",
+        "description": "Dense forest. MOST EXTENSIVE class of the study (21.6% of territory).",
+        "climate": "MAXIMUM COOLING, evapotranspirative effect, continuous shade.",
+        "examples": "Desierto de los Leones, Ajusco, Tlalpan Forest"
+      },
+      "B": {
+        "name": "Scattered Trees",
+        "description": "Open forest with 30-60% canopy cover.",
+        "climate": "Significant cooling, moderate thermal variability.",
+        "examples": "Chapultepec, Parque Hundido"
+      },
+      "C": {
+        "name": "Bush/Scrub",
+        "description": "Shrub vegetation and scrubland. Ecological transition zones.",
+        "climate": "Moderate cooling, sensitive to seasonal changes.",
+        "examples": "Ajusco slopes, secondary vegetation"
+      },
+      "D": {
+        "name": "Low Plants",
+        "description": "Grassland, urban agriculture, lawn parks.",
+        "climate": "Evapotranspirative cooling, high seasonal variability.",
+        "examples": "Sports fields, chinampas, agricultural zones"
+      },
+      "E": {
+        "name": "Bare Rock/Paved",
+        "description": "Exposed rock or pavement. No vegetation.",
+        "climate": "Extreme daytime heating, rapid nighttime cooling.",
+        "examples": "AICM, large parking lots, highways"
+      },
+      "F": {
+        "name": "Bare Soil/Sand",
+        "description": "Exposed soil or sand. Vacant lots, construction areas.",
+        "climate": "Significant daytime heating, no evaporative effect.",
+        "examples": "Vacant lots, degraded zones"
+      },
+      "G": {
+        "name": "Water",
+        "description": "Surface water bodies. MAXIMUM thermal REGULATING effect.",
+        "climate": "High thermal inertia, stable temperature, evaporative cooling.",
+        "examples": "Lake Xochimilco, canals, reservoirs"
+      }
+    },
+    "modal": {
+      "description": "Description",
+      "physicalCharacteristics": "Physical Characteristics",
+      "height": "Height",
+      "density": "Density",
+      "coverage": "Coverage",
+      "climateBehavior": "Climate Behavior",
+      "examplesInCDMX": "Examples in CDMX",
+      "classificationMetrics": "Classification Metrics",
+      "userPrecision": "User Precision",
+      "recall": "Recall",
+      "pixels": "Pixels",
+      "f1Score": "F1-Score",
+      "area": "Area"
+    },
+    "congreso": {
+      "title": "CIMA 2025 Congress",
+      "subtitle": "Presentation: LCZ Classification in CDMX",
+      "description": "Presentation of the Local Climate Zones (LCZ) classification project for Mexico City using Landsat 9 imagery and Machine Learning techniques at the CIMA 2025 International Congress.",
+      "photos": {
+        "1": "CIMA 2025 Congress Presentation",
+        "2": "LCZ CDMX Presentation",
+        "3": "CIMA 2025 Congress",
+        "4": "Participation Certificate"
+      }
+    }
   }
 }

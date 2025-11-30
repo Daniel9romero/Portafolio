@@ -1,6 +1,14 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Upload, Info } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Upload, Info, Award, X, ChevronDown } from 'lucide-react';
+
+// Congreso CIMA 2025 photos
+const congresoPhotos = [
+  { id: 1, src: './congreso-cima-2025/congreso-foto-1.png', alt: 'Exposición Congreso CIMA 2025' },
+  { id: 2, src: './congreso-cima-2025/congreso-foto-2.png', alt: 'Presentación LCZ CDMX' },
+  { id: 3, src: './congreso-cima-2025/congreso-foto-3.jpg', alt: 'Congreso CIMA 2025' },
+  { id: 4, src: './congreso-cima-2025/constancia-participacion.png', alt: 'Constancia de Participación' },
+];
 
 // LCZ Classes with colors
 const lczClasses = {
@@ -39,6 +47,8 @@ export default function InteractiveLCZMap({ geoTiffUrl }: { geoTiffUrl?: string 
   const [selectedPoint, setSelectedPoint] = useState<typeof sampleData[0] | null>(null);
   const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
   const [tiffLoaded, setTiffLoaded] = useState(!!geoTiffUrl);
+  const [congresoOpen, setCongresoOpen] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<typeof congresoPhotos[0] | null>(null);
 
   const handleFileUpload = () => {
     const input = document.createElement('input');
@@ -185,6 +195,105 @@ export default function InteractiveLCZMap({ geoTiffUrl }: { geoTiffUrl?: string 
           </div>
         </motion.div>
       )}
+
+      {/* Congreso CIMA 2025 Section */}
+      <div className="mt-6">
+        <motion.button
+          onClick={() => setCongresoOpen(!congresoOpen)}
+          className="w-full bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-between group"
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.99 }}
+        >
+          <div className="flex items-center gap-3">
+            <Award className="w-6 h-6" />
+            <div className="text-left">
+              <div className="text-lg">Congreso CIMA 2025</div>
+              <div className="text-sm opacity-90 font-normal">Exposición: Clasificación LCZ en CDMX</div>
+            </div>
+          </div>
+          <motion.div
+            animate={{ rotate: congresoOpen ? 180 : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ChevronDown className="w-6 h-6" />
+          </motion.div>
+        </motion.button>
+
+        <AnimatePresence>
+          {congresoOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="overflow-hidden"
+            >
+              <div className="mt-4 p-4 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 rounded-lg border border-amber-200 dark:border-amber-800">
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                  Presentación del proyecto de clasificación de Zonas Climáticas Locales (LCZ) para la Ciudad de México
+                  utilizando imágenes Landsat 9 y técnicas de Machine Learning.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {congresoPhotos.map((photo) => (
+                    <motion.div
+                      key={photo.id}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="cursor-pointer relative group overflow-hidden rounded-lg shadow-md"
+                      onClick={() => setSelectedPhoto(photo)}
+                    >
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        className="w-full h-24 md:h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                        <span className="text-white opacity-0 group-hover:opacity-100 text-xs font-medium px-2 text-center">
+                          {photo.alt}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Photo Modal */}
+      <AnimatePresence>
+        {selectedPhoto && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedPhoto(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative max-w-4xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedPhoto(null)}
+                className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              <img
+                src={selectedPhoto.src}
+                alt={selectedPhoto.alt}
+                className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+              />
+              <p className="text-white text-center mt-3 text-sm">{selectedPhoto.alt}</p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

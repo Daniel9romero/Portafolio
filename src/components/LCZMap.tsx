@@ -8,8 +8,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   MapPin, Layers, Info, ChevronRight, ChevronDown,
   Thermometer, TreePine, Building2, Droplets, Mountain,
-  Loader2, FlaskConical, BarChart3, Database, Cpu, X
+  Loader2, FlaskConical, BarChart3, Database, Cpu, X, Award
 } from 'lucide-react';
+
+// Congreso CIMA 2025 photos
+const congresoPhotos = [
+  { id: 1, src: 'congreso-cima-2025/congreso-foto-1.png', altKey: 'lczMap.congreso.photos.1' },
+  { id: 2, src: 'congreso-cima-2025/congreso-foto-2.png', altKey: 'lczMap.congreso.photos.2' },
+  { id: 3, src: 'congreso-cima-2025/congreso-foto-3.jpg', altKey: 'lczMap.congreso.photos.3' },
+  { id: 4, src: 'congreso-cima-2025/constancia-participacion.png', altKey: 'lczMap.congreso.photos.4' },
+];
 import { useTranslation } from 'react-i18next';
 
 // Comprehensive LCZ data with all classification information
@@ -366,14 +374,57 @@ export function LCZMap() {
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<any>(null);
   const lczLayerRef = useRef<any>(null);
-  const [showLegend, setShowLegend] = useState(true);
   const [loading, setLoading] = useState(true);
   const [tifLoaded, setTifLoaded] = useState(false);
   const [selectedLCZ, setSelectedLCZ] = useState<typeof lczTypes[0] | null>(null);
   const [activeTab, setActiveTab] = useState('legend');
   const [expandedSection, setExpandedSection] = useState<string | null>('urban');
   const [baseMap, setBaseMap] = useState<'street' | 'satellite'>('satellite');
-  const [lczOpacity, setLczOpacity] = useState(75);
+  const [lczOpacity, setLczOpacity] = useState(30);
+  const [congresoOpen, setCongresoOpen] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState<typeof congresoPhotos[0] | null>(null);
+  const congresoRef = useRef<HTMLDivElement>(null);
+
+  // Scroll detection for Congreso section (like the hero cards)
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+
+          if (!congresoRef.current) {
+            ticking = false;
+            return;
+          }
+
+          const rect = congresoRef.current.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+
+          // Expand when scrolling DOWN and section is visible
+          const inExpandZone = rect.top < viewportHeight * 0.7 && rect.bottom > viewportHeight * 0.3;
+
+          if (inExpandZone && !congresoOpen && scrollDirection === 'down') {
+            setCongresoOpen(true);
+          }
+          // Collapse when scrolling UP and section top is getting hidden
+          else if (scrollDirection === 'up' && congresoOpen && rect.top > viewportHeight * 0.5) {
+            setCongresoOpen(false);
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [congresoOpen]);
 
   useEffect(() => {
     if (typeof window !== 'undefined' && mapRef.current && !mapInstanceRef.current) {
@@ -431,7 +482,7 @@ export function LCZMap() {
 
           const lczLayer = new GeoRasterLayer.default({
             georaster: georaster,
-            opacity: 0.75,
+            opacity: 0.30,
             pixelValuesToColorFn: colorMap,
             resolution: 256,
           });
@@ -498,18 +549,18 @@ export function LCZMap() {
         >
           {/* Header */}
           <div className="text-center mb-8">
-            <Badge variant="outline" className="mb-4">Tesis de Maestría</Badge>
+            <Badge variant="outline" className="mb-4">{t('lczMap.badge')}</Badge>
             <h2 className="text-4xl font-bold mb-4">
-              Clasificación de Zonas Climáticas Locales
+              {t('lczMap.title')}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-2">
-              Ciudad de México - 2,226 km²
+              {t('lczMap.subtitle')}
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
-              <Badge className="bg-green-600">83.65% Exactitud</Badge>
-              <Badge variant="outline">Kappa: 0.824</Badge>
-              <Badge variant="outline">16 Clases LCZ</Badge>
-              {tifLoaded && <Badge className="bg-blue-600">GeoTIFF Cargado</Badge>}
+              <Badge className="bg-green-600">83.65% {t('lczMap.accuracy')}</Badge>
+              <Badge variant="outline">{t('lczMap.kappa')}: 0.824</Badge>
+              <Badge variant="outline">16 {t('lczMap.classes')}</Badge>
+              {tifLoaded && <Badge className="bg-blue-600">{t('lczMap.geotiffLoaded')}</Badge>}
             </div>
           </div>
 
@@ -519,14 +570,14 @@ export function LCZMap() {
               <CardContent className="p-4 text-center">
                 <Database className="h-6 w-6 mx-auto mb-2 text-blue-600" />
                 <p className="text-2xl font-bold">47</p>
-                <p className="text-xs text-gray-500">Imágenes Satelitales</p>
+                <p className="text-xs text-gray-500">{t('lczMap.stats.images')}</p>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-4 text-center">
                 <FlaskConical className="h-6 w-6 mx-auto mb-2 text-green-600" />
                 <p className="text-2xl font-bold">16</p>
-                <p className="text-xs text-gray-500">Variables Predictoras</p>
+                <p className="text-xs text-gray-500">{t('lczMap.stats.variables')}</p>
               </CardContent>
             </Card>
             <Card>
@@ -540,7 +591,7 @@ export function LCZMap() {
               <CardContent className="p-4 text-center">
                 <BarChart3 className="h-6 w-6 mx-auto mb-2 text-orange-600" />
                 <p className="text-2xl font-bold">~2.8M</p>
-                <p className="text-xs text-gray-500">Píxeles Clasificados</p>
+                <p className="text-xs text-gray-500">{t('lczMap.stats.pixels')}</p>
               </CardContent>
             </Card>
           </div>
@@ -551,15 +602,10 @@ export function LCZMap() {
             <div className="lg:col-span-2">
               <Card className="overflow-hidden h-full">
                 <CardHeader className="pb-2">
-                  <div className="flex justify-between items-center">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Layers className="h-5 w-5" />
-                      Mapa Interactivo LCZ
-                    </CardTitle>
-                    <Button size="sm" variant="ghost" onClick={() => setShowLegend(!showLegend)}>
-                      {showLegend ? 'Ocultar' : 'Mostrar'} Panel
-                    </Button>
-                  </div>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <Layers className="h-5 w-5" />
+                    {t('lczMap.map.title')}
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <div className="relative">
@@ -569,7 +615,7 @@ export function LCZMap() {
                       <div className="absolute inset-0 bg-white/80 dark:bg-gray-900/80 flex items-center justify-center z-10">
                         <div className="text-center">
                           <Loader2 className="w-8 h-8 animate-spin mx-auto mb-2 text-blue-600" />
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Cargando clasificación GeoTIFF...</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">{t('lczMap.map.loading')}</p>
                         </div>
                       </div>
                     )}
@@ -578,19 +624,19 @@ export function LCZMap() {
                   <div className="p-3 border-t flex items-center justify-between gap-4 flex-wrap">
                     {/* Base Map Toggle */}
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-medium text-gray-500">Vista:</span>
+                      <span className="text-xs font-medium text-gray-500">{t('lczMap.map.view')}:</span>
                       <div className="flex rounded-lg overflow-hidden border">
                         <button
                           onClick={() => setBaseMap('street')}
                           className={`px-3 py-1.5 text-xs font-medium transition-colors ${baseMap === 'street' ? 'bg-blue-600 text-white' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
                         >
-                          Mapa
+                          {t('lczMap.map.mapView')}
                         </button>
                         <button
                           onClick={() => setBaseMap('satellite')}
                           className={`px-3 py-1.5 text-xs font-medium transition-colors ${baseMap === 'satellite' ? 'bg-blue-600 text-white' : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'}`}
                         >
-                          Satélite
+                          {t('lczMap.map.satellite')}
                         </button>
                       </div>
                     </div>
@@ -614,18 +660,17 @@ export function LCZMap() {
             </div>
 
             {/* Sidebar - Same height as map */}
-            {showLegend && (
-              <div className="lg:col-span-1">
+            <div className="lg:col-span-1">
                 <Tabs value={activeTab} onValueChange={setActiveTab} className="h-full flex flex-col">
                   <TabsList className="w-full">
-                    <TabsTrigger value="legend" className="flex-1">Leyenda</TabsTrigger>
-                    <TabsTrigger value="methodology" className="flex-1">Metodología</TabsTrigger>
+                    <TabsTrigger value="legend" className="flex-1">{t('lczMap.tabs.legend')}</TabsTrigger>
+                    <TabsTrigger value="methodology" className="flex-1">{t('lczMap.tabs.methodology')}</TabsTrigger>
                   </TabsList>
 
                   <TabsContent value="legend" className="mt-2 flex-1">
                     <Card className="h-[570px] flex flex-col">
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-sm">Clases LCZ</CardTitle>
+                        <CardTitle className="text-sm">{t('lczMap.legend.title')}</CardTitle>
                       </CardHeader>
                       <CardContent className="flex-1 overflow-y-auto">
                         {/* Urban Section */}
@@ -635,7 +680,7 @@ export function LCZMap() {
                         >
                           <span className="flex items-center gap-2 font-semibold text-sm">
                             <Building2 className="h-4 w-4" />
-                            Zonas Urbanas (9)
+                            {t('lczMap.legend.urban')} (9)
                           </span>
                           {expandedSection === 'urban' ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                         </button>
@@ -683,7 +728,7 @@ export function LCZMap() {
                         >
                           <span className="flex items-center gap-2 font-semibold text-sm">
                             <TreePine className="h-4 w-4" />
-                            Zonas Naturales (7)
+                            {t('lczMap.legend.natural')} (7)
                           </span>
                           {expandedSection === 'natural' ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
                         </button>
@@ -734,14 +779,14 @@ export function LCZMap() {
                         <div>
                           <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
                             <Database className="h-4 w-4 text-blue-600" />
-                            Datos Satelitales
+                            {t('lczMap.methodology.satelliteData')}
                           </h4>
                           <div className="text-xs space-y-1 ml-6">
-                            <p><strong>Sensor:</strong> {methodology.satellite}</p>
-                            <p><strong>Resolución:</strong> {methodology.resolution}</p>
-                            <p><strong>Período:</strong> {methodology.period}</p>
-                            <p><strong>Imágenes:</strong> {methodology.images}</p>
-                            <p><strong>Área:</strong> {methodology.area}</p>
+                            <p><strong>{t('lczMap.methodology.sensor')}:</strong> {methodology.satellite}</p>
+                            <p><strong>{t('lczMap.methodology.resolution')}:</strong> {methodology.resolution}</p>
+                            <p><strong>{t('lczMap.methodology.period')}:</strong> {methodology.period}</p>
+                            <p><strong>{t('lczMap.methodology.images')}:</strong> {methodology.images}</p>
+                            <p><strong>{t('lczMap.methodology.area')}:</strong> {methodology.area}</p>
                           </div>
                         </div>
 
@@ -749,14 +794,14 @@ export function LCZMap() {
                         <div>
                           <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
                             <FlaskConical className="h-4 w-4 text-green-600" />
-                            Variables ({methodology.totalVariables})
+                            {t('lczMap.methodology.variables')} ({methodology.totalVariables})
                           </h4>
                           <div className="text-xs ml-6">
-                            <p className="font-medium mb-1">8 Bandas Espectrales:</p>
+                            <p className="font-medium mb-1">8 {t('lczMap.methodology.spectralBands')}:</p>
                             <p className="text-gray-500 mb-2">{methodology.bands.join(', ')}</p>
-                            <p className="font-medium mb-1">5 Índices:</p>
+                            <p className="font-medium mb-1">5 {t('lczMap.methodology.indices')}:</p>
                             <p className="text-gray-500 mb-2">{methodology.indices.join(', ')}</p>
-                            <p className="font-medium mb-1">3 Topográficas:</p>
+                            <p className="font-medium mb-1">3 {t('lczMap.methodology.topographic')}:</p>
                             <p className="text-gray-500">{methodology.topography.join(', ')}</p>
                           </div>
                         </div>
@@ -765,20 +810,19 @@ export function LCZMap() {
                         <div>
                           <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
                             <Cpu className="h-4 w-4 text-purple-600" />
-                            Entrenamiento
+                            {t('lczMap.methodology.training')}
                           </h4>
                           <div className="text-xs space-y-1 ml-6">
-                            <p><strong>Muestras:</strong> {methodology.samples}</p>
-                            <p><strong>División:</strong> {methodology.validation}</p>
-                            <p><strong>Validación:</strong> Cruzada triple (semillas: 123, 456, 789)</p>
+                            <p><strong>{t('lczMap.methodology.samples')}:</strong> {methodology.samples}</p>
+                            <p><strong>{t('lczMap.methodology.split')}:</strong> {methodology.validation}</p>
+                            <p><strong>{t('lczMap.methodology.validation')}:</strong> {t('lczMap.methodology.crossValidation')}</p>
                           </div>
                         </div>
                       </CardContent>
                     </Card>
                   </TabsContent>
                 </Tabs>
-              </div>
-            )}
+            </div>
           </div>
 
           {/* Algorithm Comparison - Full Width */}
@@ -786,9 +830,9 @@ export function LCZMap() {
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
                 <Cpu className="h-5 w-5" />
-                Comparación de Algoritmos ML
+                {t('lczMap.algorithms.title')}
               </CardTitle>
-              <CardDescription>6 algoritmos evaluados - GTB supera a Random Forest por +3.44%</CardDescription>
+              <CardDescription>{t('lczMap.algorithms.description')}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -814,6 +858,107 @@ export function LCZMap() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Congreso CIMA 2025 Section */}
+          <motion.div
+            ref={congresoRef}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-6"
+          >
+            <div
+              className="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg flex items-center justify-between"
+            >
+              <div className="flex items-center gap-3">
+                <Award className="w-6 h-6" />
+                <div className="text-left">
+                  <div className="text-lg">{t('lczMap.congreso.title')}</div>
+                  <div className="text-sm opacity-90 font-normal">{t('lczMap.congreso.subtitle')}</div>
+                </div>
+              </div>
+              <motion.div
+                animate={{ rotate: congresoOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ChevronDown className="w-6 h-6" />
+              </motion.div>
+            </div>
+
+            <AnimatePresence>
+              {congresoOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-4 p-4 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 rounded-lg border border-amber-200 dark:border-amber-800">
+                    <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                      {t('lczMap.congreso.description')}
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {congresoPhotos.map((photo) => (
+                        <motion.div
+                          key={photo.id}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="cursor-pointer relative group overflow-hidden rounded-lg shadow-md"
+                          onClick={() => setSelectedPhoto(photo)}
+                        >
+                          <img
+                            src={`${import.meta.env.BASE_URL}${photo.src}`}
+                            alt={t(photo.altKey)}
+                            className="w-full h-24 md:h-32 object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
+                            <span className="text-white opacity-0 group-hover:opacity-100 text-xs font-medium px-2 text-center">
+                              {t(photo.altKey)}
+                            </span>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Photo Modal for Congreso */}
+          <AnimatePresence>
+            {selectedPhoto && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                onClick={() => setSelectedPhoto(null)}
+              >
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  className="relative max-w-4xl max-h-[90vh] w-full"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    onClick={() => setSelectedPhoto(null)}
+                    className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors"
+                  >
+                    <X className="w-8 h-8" />
+                  </button>
+                  <img
+                    src={`${import.meta.env.BASE_URL}${selectedPhoto.src}`}
+                    alt={t(selectedPhoto.altKey)}
+                    className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
+                  />
+                  <p className="text-white text-center mt-3 text-sm">{t(selectedPhoto.altKey)}</p>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* LCZ Detail Modal */}
           <AnimatePresence>

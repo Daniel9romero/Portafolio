@@ -282,5 +282,186 @@
       "message": "Mensaje",
       "send": "Enviar"
     }
+  },
+  "languageSelector": {
+    "label": "Idioma"
+  },
+  "lczMap": {
+    "badge": "Tesis de Maestría",
+    "title": "Clasificación de Zonas Climáticas Locales",
+    "subtitle": "Ciudad de México - 2,226 km²",
+    "accuracy": "Exactitud",
+    "kappa": "Kappa",
+    "classes": "Clases LCZ",
+    "geotiffLoaded": "GeoTIFF Cargado",
+    "stats": {
+      "images": "Imágenes Satelitales",
+      "variables": "Variables Predictoras",
+      "pixels": "Píxeles Clasificados"
+    },
+    "map": {
+      "title": "Mapa Interactivo LCZ",
+      "hide": "Ocultar",
+      "show": "Mostrar",
+      "panel": "Panel",
+      "view": "Vista",
+      "mapView": "Mapa",
+      "satellite": "Satélite",
+      "loading": "Cargando clasificación GeoTIFF..."
+    },
+    "tabs": {
+      "legend": "Leyenda",
+      "methodology": "Metodología"
+    },
+    "legend": {
+      "title": "Clases LCZ",
+      "urban": "Zonas Urbanas",
+      "natural": "Zonas Naturales"
+    },
+    "methodology": {
+      "satelliteData": "Datos Satelitales",
+      "sensor": "Sensor",
+      "resolution": "Resolución",
+      "period": "Período",
+      "images": "Imágenes",
+      "area": "Área",
+      "variables": "Variables",
+      "spectralBands": "Bandas Espectrales",
+      "indices": "Índices",
+      "topographic": "Topográficas",
+      "training": "Entrenamiento",
+      "samples": "Muestras",
+      "split": "División",
+      "validation": "Validación",
+      "crossValidation": "Cruzada triple (semillas: 123, 456, 789)"
+    },
+    "algorithms": {
+      "title": "Comparación de Algoritmos ML",
+      "description": "6 algoritmos evaluados - GTB supera a Random Forest por +3.44%"
+    },
+    "lczTypes": {
+      "1": {
+        "name": "Compacto Gran Altura",
+        "description": "Mezcla densa de edificios altos (+25m). Distrito financiero y comercial de alta densidad.",
+        "climate": "Alta absorción solar, retención térmica nocturna significativa, isla de calor intensa.",
+        "examples": "Corredor Reforma-Polanco, Santa Fe"
+      },
+      "2": {
+        "name": "Compacto Altura Media",
+        "description": "Edificios de 3-9 pisos con configuración densa. Zonas residenciales consolidadas.",
+        "climate": "Temperatura superficial alta, retención térmica moderada-alta.",
+        "examples": "Centro Histórico, Roma Norte, Doctores"
+      },
+      "3": {
+        "name": "Compacto Baja Altura",
+        "description": "Estructuras de 1-3 pisos densamente agrupadas. Barrios tradicionales.",
+        "climate": "Calentamiento diurno significativo, enfriamiento nocturno más rápido.",
+        "examples": "Tepito, La Merced, colonias populares"
+      },
+      "4": {
+        "name": "Abierto Gran Altura",
+        "description": "Torres aisladas con amplios espacios verdes entre edificios.",
+        "climate": "Menor intensidad térmica, mejor ventilación, enfriamiento por vegetación.",
+        "examples": "Tlatelolco, Torres de Mixcoac"
+      },
+      "5": {
+        "name": "Abierto Altura Media",
+        "description": "Balance entre superficie construida y espacios abiertos. MEJOR DESEMPEÑO urbano.",
+        "climate": "Temperatura moderada, enfriamiento evapotranspirativo significativo.",
+        "examples": "Unidades habitacionales modernas, Coyoacán"
+      },
+      "6": {
+        "name": "Abierto Baja Altura",
+        "description": "Viviendas unifamiliares con jardines. Suburbio residencial típico.",
+        "climate": "Temperatura superficial baja, alto potencial de enfriamiento.",
+        "examples": "Pedregal, Jardines del Pedregal"
+      },
+      "7": {
+        "name": "Ligero Baja Altura",
+        "description": "Estructuras ligeras: mercados, asentamientos informales. Materiales variables.",
+        "climate": "Alta reflectancia metálica, calentamiento/enfriamiento rápido.",
+        "examples": "Asentamientos informales, mercados sobre ruedas"
+      },
+      "8": {
+        "name": "Grande Baja Altura",
+        "description": "Naves industriales, centros comerciales, bodegas. MAYORES intensidades de isla de calor.",
+        "climate": "Grandes superficies absorbentes, mínima vegetación. Prioridad mitigación.",
+        "examples": "Central de Abastos, Zona Industrial Vallejo"
+      },
+      "9": {
+        "name": "Escasamente Construido",
+        "description": "Disposición dispersa en entorno natural. PEOR DESEMPEÑO de clasificación.",
+        "climate": "Transición urbano-rural, microclimas muy variables.",
+        "examples": "Periferias, Xochimilco disperso, Milpa Alta"
+      },
+      "A": {
+        "name": "Árboles Densos",
+        "description": "Bosque denso. CLASE MÁS EXTENSA del estudio (21.6% del territorio).",
+        "climate": "ENFRIAMIENTO MÁXIMO, efecto evapotranspirativo, sombra continua.",
+        "examples": "Desierto de los Leones, Ajusco, Bosque de Tlalpan"
+      },
+      "B": {
+        "name": "Árboles Dispersos",
+        "description": "Bosque abierto con cobertura de dosel entre 30-60%.",
+        "climate": "Enfriamiento significativo, variabilidad térmica moderada.",
+        "examples": "Chapultepec, Parque Hundido"
+      },
+      "C": {
+        "name": "Arbustos",
+        "description": "Vegetación arbustiva y matorrales. Zonas de transición ecológica.",
+        "climate": "Enfriamiento moderado, sensible a cambios estacionales.",
+        "examples": "Laderas del Ajusco, vegetación secundaria"
+      },
+      "D": {
+        "name": "Plantas Bajas",
+        "description": "Pastizal, agricultura urbana, parques de césped.",
+        "climate": "Enfriamiento por evapotranspiración, alta variabilidad estacional.",
+        "examples": "Campos deportivos, chinampas, zonas agrícolas"
+      },
+      "E": {
+        "name": "Roca/Pavimento",
+        "description": "Roca expuesta o pavimento. Sin vegetación.",
+        "climate": "Calentamiento diurno extremo, enfriamiento nocturno rápido.",
+        "examples": "AICM, grandes estacionamientos, autopistas"
+      },
+      "F": {
+        "name": "Suelo Desnudo",
+        "description": "Suelo o arena expuesta. Terrenos baldíos, áreas en construcción.",
+        "climate": "Calentamiento diurno significativo, sin efecto evaporativo.",
+        "examples": "Terrenos baldíos, zonas degradadas"
+      },
+      "G": {
+        "name": "Agua",
+        "description": "Cuerpos de agua superficiales. MÁXIMO EFECTO REGULADOR térmico.",
+        "climate": "Alta inercia térmica, temperatura estable, enfriamiento por evaporación.",
+        "examples": "Lago de Xochimilco, canales, presas"
+      }
+    },
+    "modal": {
+      "description": "Descripción",
+      "physicalCharacteristics": "Características Físicas",
+      "height": "Altura",
+      "density": "Densidad",
+      "coverage": "Cobertura",
+      "climateBehavior": "Comportamiento Climático",
+      "examplesInCDMX": "Ejemplos en CDMX",
+      "classificationMetrics": "Métricas de Clasificación",
+      "userPrecision": "Precisión Usuario",
+      "recall": "Exhaustividad",
+      "pixels": "Píxeles",
+      "f1Score": "F1-Score",
+      "area": "Área"
+    },
+    "congreso": {
+      "title": "Congreso CIMA 2025",
+      "subtitle": "Exposición: Clasificación LCZ en CDMX",
+      "description": "Presentación del proyecto de clasificación de Zonas Climáticas Locales (LCZ) para la Ciudad de México utilizando imágenes Landsat 9 y técnicas de Machine Learning en el Congreso Internacional CIMA 2025.",
+      "photos": {
+        "1": "Exposición Congreso CIMA 2025",
+        "2": "Presentación LCZ CDMX",
+        "3": "Congreso CIMA 2025",
+        "4": "Constancia de Participación"
+      }
+    }
   }
 }

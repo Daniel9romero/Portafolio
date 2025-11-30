@@ -304,8 +304,9 @@ function App() {
             <div className="flex items-center gap-3">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Globe className="h-5 w-5" />
+                  <Button variant="ghost" size="sm" className="gap-1.5">
+                    <Globe className="h-4 w-4" />
+                    <span className="text-xs font-medium">{t('languageSelector.label')}</span>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
