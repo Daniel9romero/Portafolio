@@ -26,12 +26,12 @@ const CONFIG = {
   accentColorHex: 'rgba(59, 130, 246, 0.5)', // Para el glow del botón
 
   // Posición del chat
-  bubblePosition: 'bottom-6 right-6', // Posición de la burbuja
-  windowPosition: 'bottom-0 right-0 sm:bottom-6 sm:right-6', // Posición de la ventana
+  bubblePosition: 'bottom-4 right-4 sm:bottom-6 sm:right-6', // Posición de la burbuja
+  windowPosition: 'bottom-4 right-4 left-4 sm:left-auto sm:bottom-6 sm:right-6', // Posición de la ventana
 
-  // Tamaños - fullscreen en móvil, ventana en desktop
-  bubbleSize: 'w-16 h-16 sm:w-20 sm:h-20', // Tamaño de la burbuja
-  windowSize: 'w-full h-full sm:w-[350px] sm:h-[450px] sm:rounded-2xl', // Tamaño de la ventana
+  // Tamaños
+  bubbleSize: 'w-14 h-14 sm:w-20 sm:h-20', // Tamaño de la burbuja
+  windowSize: 'h-[70vh] sm:w-[350px] sm:h-[450px] rounded-2xl', // Tamaño de la ventana
 
   // Tiempo para mostrar notificación (ms)
   notificationDelay: 3000,
@@ -229,7 +229,7 @@ export default function ChatBubble() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className={`fixed ${CONFIG.windowPosition} z-50 ${CONFIG.windowSize} bg-black/95 sm:bg-black/90 backdrop-blur-2xl border-0 sm:border border-white/10 shadow-2xl overflow-hidden flex flex-col`}
+            className={`fixed ${CONFIG.windowPosition} z-50 ${CONFIG.windowSize} bg-black/90 backdrop-blur-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col`}
           >
             {/* Header */}
             <div className={`bg-gradient-to-r from-${CONFIG.accentColor}/20 to-green-600/20 px-4 py-3 flex items-center gap-3 border-b border-white/10`}>
