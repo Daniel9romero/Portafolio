@@ -1346,7 +1346,7 @@ function App() {
               {/* Preview iframe */}
               <div className="relative h-[50vh] sm:h-[55vh] bg-gray-100 dark:bg-gray-800">
                 <iframe
-                  src="https://daniel9romero.github.io/LCZmap/"
+                  src="https://daniel9romero.github.io/LCZmap/?embed=true"
                   className="w-full h-full border-0"
                   title="LCZ Map Preview"
                 />
