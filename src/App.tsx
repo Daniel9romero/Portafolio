@@ -70,6 +70,17 @@ function App() {
     }
   }, [darkMode]);
 
+  // Close LCZ preview with ESC key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setShowLCZPreview(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
+
   // Auto-scroll carousel every 5 seconds
   useEffect(() => {
     if (!emblaApi) return;
@@ -1310,18 +1321,18 @@ function App() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
+              className="relative w-full max-w-sm sm:max-w-2xl bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center">
-                    <Map className="h-5 w-5 text-white" />
+              <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center">
+                    <Map className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white">Local Climate Zones - CDMX</h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">Mapa interactivo de clasificación urbana</p>
+                    <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white">Local Climate Zones</h3>
+                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Mapa interactivo CDMX</p>
                   </div>
                 </div>
                 <button
@@ -1333,7 +1344,7 @@ function App() {
               </div>
 
               {/* Preview iframe */}
-              <div className="relative h-[60vh] bg-gray-100 dark:bg-gray-800">
+              <div className="relative h-[50vh] sm:h-[55vh] bg-gray-100 dark:bg-gray-800">
                 <iframe
                   src="https://daniel9romero.github.io/LCZmap/"
                   className="w-full h-full border-0"
@@ -1342,17 +1353,17 @@ function App() {
               </div>
 
               {/* Footer */}
-              <div className="flex items-center justify-between p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  Clasificación de Zonas Climáticas Locales usando Machine Learning y Google Earth Engine
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left hidden sm:block">
+                  Machine Learning + Google Earth Engine
                 </p>
                 <a
                   href="https://daniel9romero.github.io/LCZmap/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto justify-center"
                 >
-                  Abrir en nueva pestaña
+                  Abrir proyecto
                   <ExternalLink className="h-4 w-4" />
                 </a>
               </div>

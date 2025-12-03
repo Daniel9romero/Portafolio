@@ -99,6 +99,17 @@ export default function ChatBubble() {
     }
   }, [isOpen]);
 
+  // Close chat with ESC key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [isOpen]);
+
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
