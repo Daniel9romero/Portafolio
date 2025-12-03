@@ -27,11 +27,11 @@ const CONFIG = {
 
   // Posición del chat
   bubblePosition: 'bottom-6 right-6', // Posición de la burbuja
-  windowPosition: 'bottom-6 right-6', // Posición de la ventana
+  windowPosition: 'bottom-0 right-0 sm:bottom-6 sm:right-6', // Posición de la ventana
 
-  // Tamaños
-  bubbleSize: 'w-20 h-20', // Tamaño de la burbuja
-  windowSize: 'w-[350px] h-[450px]', // Tamaño de la ventana
+  // Tamaños - fullscreen en móvil, ventana en desktop
+  bubbleSize: 'w-16 h-16 sm:w-20 sm:h-20', // Tamaño de la burbuja
+  windowSize: 'w-full h-full sm:w-[350px] sm:h-[450px] sm:rounded-2xl', // Tamaño de la ventana
 
   // Tiempo para mostrar notificación (ms)
   notificationDelay: 3000,
@@ -229,7 +229,7 @@ export default function ChatBubble() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className={`fixed ${CONFIG.windowPosition} z-50 ${CONFIG.windowSize} bg-black/90 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden flex flex-col`}
+            className={`fixed ${CONFIG.windowPosition} z-50 ${CONFIG.windowSize} bg-black/95 sm:bg-black/90 backdrop-blur-2xl border-0 sm:border border-white/10 shadow-2xl overflow-hidden flex flex-col`}
           >
             {/* Header */}
             <div className={`bg-gradient-to-r from-${CONFIG.accentColor}/20 to-green-600/20 px-4 py-3 flex items-center gap-3 border-b border-white/10`}>
@@ -316,7 +316,7 @@ export default function ChatBubble() {
                   onKeyPress={handleKeyPress}
                   placeholder={CONFIG.inputPlaceholder}
                   disabled={isLoading}
-                  className={`flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-${CONFIG.accentColor}/50 focus:ring-1 focus:ring-${CONFIG.accentColor}/30 transition-all disabled:opacity-50`}
+                  className={`flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-${CONFIG.accentColor}/50 focus:ring-1 focus:ring-${CONFIG.accentColor}/30 transition-all disabled:opacity-50`}
                 />
                 <button
                   onClick={sendMessage}
