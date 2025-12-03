@@ -35,6 +35,7 @@ const LCZMap = lazy(() => import('./components/LCZMap'));
 const InteractiveLCZMap = lazy(() => import('./components/InteractiveLCZMap'));
 const LinkedInEmbed = lazy(() => import('./components/LinkedInEmbed').then(module => ({ default: module.LinkedInEmbed })));
 const ParticlesBackground = lazy(() => import('./components/ParticlesBackground'));
+import ChatBubble from './components/ChatBubble';
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -1295,6 +1296,9 @@ function App() {
           </p>
         </div>
       </footer>
+
+      {/* Chat Bubble */}
+      <ChatBubble />
     </div>
   );
 }
