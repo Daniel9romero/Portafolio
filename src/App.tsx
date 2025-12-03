@@ -8,7 +8,7 @@ import {
   Target, Users, ArrowRight, Calendar,
   Loader2, ChevronLeft, ChevronRight,
   Code2, Database, LineChart as LineChartIcon, Cpu, Cloud, Users2,
-  Lock, ShieldCheck, Zap, PieChart
+  Lock, ShieldCheck, Zap, PieChart, Eye
 } from 'lucide-react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Button } from '@/components/ui/button';
@@ -31,8 +31,6 @@ import 'leaflet/dist/leaflet.css';
 // Lazy load heavy components
 const ProfilePhoto = lazy(() => import('./components/ProfilePhoto'));
 const Avatar3D = lazy(() => import('./components/Avatar3D'));
-const LCZMap = lazy(() => import('./components/LCZMap'));
-const InteractiveLCZMap = lazy(() => import('./components/InteractiveLCZMap'));
 const LinkedInEmbed = lazy(() => import('./components/LinkedInEmbed').then(module => ({ default: module.LinkedInEmbed })));
 const ParticlesBackground = lazy(() => import('./components/ParticlesBackground'));
 import ChatBubble from './components/ChatBubble';
@@ -52,6 +50,7 @@ function App() {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const [showFullAbout, setShowFullAbout] = useState(false);
   const [cardsExpanded, setCardsExpanded] = useState(false);
+  const [showLCZPreview, setShowLCZPreview] = useState(false);
   const cardsRef = useRef<HTMLDivElement>(null);
 
 
@@ -139,7 +138,7 @@ function App() {
     i18n.changeLanguage(lng);
   };
 
-  const navItems = ['home', 'about', 'projects', 'skills', 'experience', 'lcz-map', 'contact'];
+  const navItems = ['home', 'about', 'projects', 'skills', 'experience', 'contact'];
 
   const projects = [
     {
@@ -902,7 +901,7 @@ function App() {
 
           {/* Todos los proyectos en cuadrícula uniforme */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {/* Proyecto LCZ (público) */}
+            {/* Proyecto LCZ (público) - Link externo con Preview */}
             {projects.filter(p => !p.confidential).map((project, index) => {
               const Icon = project.icon;
               return (
@@ -914,6 +913,22 @@ function App() {
                   className="group"
                 >
                   <Card className="h-full hover:shadow-lg transition-all duration-300 border overflow-hidden">
+                    {/* Preview Image */}
+                    <div className="relative h-36 overflow-hidden">
+                      <img
+                        src={`${import.meta.env.BASE_URL}lcz-fotos/LCZ1.jpg`}
+                        alt="LCZ Map Preview"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-2 left-2 flex gap-1">
+                        {project.tech.slice(0, 3).map((tech) => (
+                          <span key={tech} className="text-[10px] px-1.5 py-0.5 bg-white/20 backdrop-blur-sm rounded text-white">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                     <div className="p-4">
                       <div className="flex items-start gap-3">
                         <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${project.color} flex items-center justify-center flex-shrink-0`}>
@@ -926,21 +941,26 @@ function App() {
                           <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mt-1">
                             {t(`projects.${project.key}.description`)}
                           </p>
-                          <div className="flex flex-wrap gap-1 mt-2">
-                            {project.tech.slice(0, 3).map((tech) => (
-                              <span key={tech} className="text-[10px] px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-400">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                          <a
-                            href="#lcz-map"
-                            className="inline-flex items-center gap-1 mt-3 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                          >
-                            <span className="border-b border-current">{t('projects.viewDetails')}</span>
-                            <ArrowRight className="h-3 w-3" />
-                          </a>
                         </div>
+                      </div>
+                      {/* Botones */}
+                      <div className="flex items-center gap-2 mt-4">
+                        <button
+                          onClick={() => setShowLCZPreview(true)}
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                        >
+                          <Eye className="h-3.5 w-3.5" />
+                          Preview
+                        </button>
+                        <a
+                          href="https://daniel9romero.github.io/LCZmap/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        >
+                          Ver proyecto
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
                       </div>
                     </div>
                   </Card>
@@ -1194,18 +1214,6 @@ function App() {
       </section>
 
 
-      {/* LCZ Map Section - Interactive Visualization */}
-      <section id="lcz-map" className="py-12 px-4">
-        <Suspense fallback={
-          <div className="container mx-auto text-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin mx-auto mb-4" />
-            <p className="text-gray-600 dark:text-gray-400">Loading interactive map...</p>
-          </div>
-        }>
-          <LCZMap />
-        </Suspense>
-      </section>
-
       {/* Contact Section */}
       <section id="contact" className="py-12 px-4">
         <div className="container mx-auto max-w-6xl">
@@ -1287,6 +1295,71 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* LCZ Preview Modal */}
+      <AnimatePresence>
+        {showLCZPreview && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setShowLCZPreview(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-4xl bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center">
+                    <Map className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">Local Climate Zones - CDMX</h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Mapa interactivo de clasificación urbana</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowLCZPreview(false)}
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                >
+                  <X className="h-5 w-5 text-gray-500" />
+                </button>
+              </div>
+
+              {/* Preview iframe */}
+              <div className="relative h-[60vh] bg-gray-100 dark:bg-gray-800">
+                <iframe
+                  src="https://daniel9romero.github.io/LCZmap/"
+                  className="w-full h-full border-0"
+                  title="LCZ Map Preview"
+                />
+              </div>
+
+              {/* Footer */}
+              <div className="flex items-center justify-between p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  Clasificación de Zonas Climáticas Locales usando Machine Learning y Google Earth Engine
+                </p>
+                <a
+                  href="https://daniel9romero.github.io/LCZmap/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Abrir en nueva pestaña
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t">
