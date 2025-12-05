@@ -155,6 +155,11 @@
       "description": "Sistema de classificação de zonas climáticas urbanas usando Gradient Tree Boost e Landsat 9",
       "achievement": "83.65% de precisão com algoritmos de ML"
     },
+    "project2": {
+      "title": "Dashboard Cohorts & Funnel",
+      "description": "Análise de coortes semanais e funil de conversão para leads imobiliários com mapas interativos",
+      "achievement": "5 etapas de conversão e 15 empreendimentos imobiliários"
+    },
     "confidential": {
       "label": "Projeto confidencial",
       "moreInfo": "Mais informação",

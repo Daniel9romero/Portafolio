@@ -156,29 +156,9 @@
       "achievement": "83.65% de precisión con algoritmos de ML"
     },
     "project2": {
-      "title": "Expansión Retail 2030",
-      "description": "Modelo predictivo y dashboard interactivo para expansión a 1,000 tiendas",
-      "achievement": "Análisis de escenarios y proyecciones financieras completas"
-    },
-    "project3": {
-      "title": "Inteligencia Competitiva",
-      "description": "Benchmarking contra Sigma Alimentos y Qualtia con enfoque en digitalización",
-      "achievement": "Análisis profundo de capacidades tecnológicas y ventajas competitivas"
-    },
-    "project4": {
-      "title": "Análisis de Mercado Embutidos",
-      "description": "Modelos de consumo per cápita y proyecciones estado por estado para México",
-      "achievement": "Insights estratégicos para expansión de categorías"
-    },
-    "project5": {
-      "title": "Sistema de Agentes IA de Inteligencia de Mercado",
-      "description": "Sistema automatizado usando arquitectura RAG y agentes inteligentes para análisis de mercado en tiempo real",
-      "achievement": "Reducción del 70% en tiempo de análisis manual"
-    },
-    "project6": {
-      "title": "Expansión Estratégica de Mercado mediante Analítica Geoespacial",
-      "description": "Dashboard geoespacial para identificar zonas de alto potencial comercial y optimizar rutas de distribución",
-      "achievement": "Reducción del 20% en costos operativos y aumento del 35% en cobertura de mercado"
+      "title": "Dashboard Cohorts & Funnel",
+      "description": "Análisis de cohortes semanales y embudo de conversión para leads inmobiliarios con mapas interactivos",
+      "achievement": "5 etapas de conversión y 15 desarrollos inmobiliarios"
     },
     "confidential": {
       "label": "Proyecto confidencial",

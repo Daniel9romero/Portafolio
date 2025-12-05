@@ -51,6 +51,7 @@ function App() {
   const [showFullAbout, setShowFullAbout] = useState(false);
   const [cardsExpanded, setCardsExpanded] = useState(false);
   const [showLCZPreview, setShowLCZPreview] = useState(false);
+  const [showCohortPreview, setShowCohortPreview] = useState(false);
   const cardsRef = useRef<HTMLDivElement>(null);
 
 
@@ -70,11 +71,12 @@ function App() {
     }
   }, [darkMode]);
 
-  // Close LCZ preview with ESC key
+  // Close previews with ESC key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setShowLCZPreview(false);
+        setShowCohortPreview(false);
       }
     };
     window.addEventListener('keydown', handleEsc);
@@ -159,6 +161,15 @@ function App() {
       color: 'from-slate-600 to-slate-700',
       icon: Map,
       metrics: { accuracy: 83.65, dataPoints: '1M+' },
+      confidential: false
+    },
+    {
+      id: 2,
+      key: 'project2',
+      tech: ['React', 'FastAPI', 'ECharts', 'Leaflet'],
+      color: 'from-slate-600 to-slate-700',
+      icon: BarChart3,
+      metrics: { stages: 5, developments: 15 },
       confidential: false
     },
     // Proyectos confidenciales
@@ -912,9 +923,21 @@ function App() {
 
           {/* Todos los proyectos en cuadrícula uniforme */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            {/* Proyecto LCZ (público) - Link externo con Preview */}
+            {/* Proyectos públicos - Link externo con Preview */}
             {projects.filter(p => !p.confidential).map((project, index) => {
               const Icon = project.icon;
+              const isLCZ = project.key === 'project1';
+              const isCohort = project.key === 'project2';
+              const previewImage = isLCZ
+                ? `${import.meta.env.BASE_URL}lcz-fotos/LCZ1.jpg`
+                : `${import.meta.env.BASE_URL}cohortfunnel-preview.png`;
+              const projectUrl = isLCZ
+                ? 'https://daniel9romero.github.io/LCZmap/'
+                : 'https://daniel9romero.github.io/Cohorsfunnel';
+              const handlePreview = isLCZ
+                ? () => setShowLCZPreview(true)
+                : () => setShowCohortPreview(true);
+
               return (
                 <motion.div
                   key={project.id}
@@ -927,8 +950,8 @@ function App() {
                     {/* Preview Image */}
                     <div className="relative h-36 overflow-hidden">
                       <img
-                        src={`${import.meta.env.BASE_URL}lcz-fotos/LCZ1.jpg`}
-                        alt="LCZ Map Preview"
+                        src={previewImage}
+                        alt={`${t(`projects.${project.key}.title`)} Preview`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -957,14 +980,14 @@ function App() {
                       {/* Botones */}
                       <div className="flex items-center gap-2 mt-4">
                         <button
-                          onClick={() => setShowLCZPreview(true)}
+                          onClick={handlePreview}
                           className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
                         >
                           <Eye className="h-3.5 w-3.5" />
                           Preview
                         </button>
                         <a
-                          href="https://daniel9romero.github.io/LCZmap/"
+                          href={projectUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -1359,6 +1382,71 @@ function App() {
                 </p>
                 <a
                   href="https://daniel9romero.github.io/LCZmap/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto justify-center"
+                >
+                  Abrir proyecto
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Cohort Funnel Preview Modal */}
+      <AnimatePresence>
+        {showCohortPreview && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            onClick={() => setShowCohortPreview(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative w-full max-w-sm sm:max-w-4xl bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center">
+                    <BarChart3 className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-sm sm:text-base text-gray-900 dark:text-white">{t('projects.project2.title')}</h3>
+                    <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">React + FastAPI + ECharts</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setShowCohortPreview(false)}
+                  className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                >
+                  <X className="h-5 w-5 text-gray-500" />
+                </button>
+              </div>
+
+              {/* Preview iframe */}
+              <div className="relative h-[50vh] sm:h-[60vh] bg-gray-100 dark:bg-gray-800">
+                <iframe
+                  src="https://daniel9romero.github.io/Cohorsfunnel"
+                  className="w-full h-full border-0"
+                  title="Cohort Funnel Preview"
+                />
+              </div>
+
+              {/* Footer */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
+                <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 text-center sm:text-left hidden sm:block">
+                  Análisis de cohortes + Embudo de conversión
+                </p>
+                <a
+                  href="https://daniel9romero.github.io/Cohorsfunnel"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-xs sm:text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto justify-center"

@@ -155,6 +155,11 @@
       "description": "Urban climate zone classification system using Gradient Tree Boost and Landsat 9",
       "achievement": "83.65% accuracy with ML algorithms"
     },
+    "project2": {
+      "title": "Cohorts & Funnel Dashboard",
+      "description": "Weekly cohort analysis and conversion funnel for real estate leads with interactive maps",
+      "achievement": "5 conversion stages and 15 real estate developments"
+    },
     "confidential": {
       "label": "Confidential project",
       "moreInfo": "More info",
