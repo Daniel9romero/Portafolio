@@ -53,8 +53,16 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+  }
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 }
 

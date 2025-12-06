@@ -404,7 +404,7 @@ function App() {
               transition={{ duration: 0.8 }}
               className="hidden lg:block"
             >
-              <div className="relative">
+              <div id="profile-photo-desktop" className="relative">
                 <Suspense fallback={
                   <div className="w-64 h-64 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse">
                   </div>
@@ -429,7 +429,7 @@ function App() {
               </Badge>
 
               {/* Foto en móvil - entre badge y nombre */}
-              <div className="lg:hidden flex justify-center mb-4">
+              <div id="profile-photo-mobile" className="lg:hidden flex justify-center mb-4">
                 <Suspense fallback={
                   <div className="w-48 h-48 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse">
                   </div>
