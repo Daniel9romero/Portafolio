@@ -110,10 +110,10 @@ export default function ChatBubble() {
 
           // Solo actualizar si tiene dimensiones válidas
           if (rect.width > 0 && rect.height > 0) {
-            // Calcular posición esperada del centro de la pantalla (aproximado)
+            // Calcular posición esperada del centro de la pantalla
             const expectedCenterX = window.innerWidth / 2 - rect.width / 2;
             const isPositionValid = isMobile
-              ? rect.left > expectedCenterX - 100 // Móvil: debe estar cerca del centro
+              ? Math.abs(rect.left - expectedCenterX) < 20 // Móvil: debe estar MUY cerca del centro (±20px)
               : rect.left > 50; // Desktop: no debe estar muy pegado al borde
 
             // Guardar posición inicial solo si es válida (animación terminada)
@@ -123,6 +123,11 @@ export default function ChatBubble() {
                 y: rect.top + window.scrollY, // Guardar posición absoluta (no relativa al viewport)
                 size: rect.width
               };
+            }
+
+            // En móvil: si ya tenemos posición guardada, usarla siempre (no recalcular)
+            if (isMobile && initialHeroPositionRef.current) {
+              // No actualizar la referencia, solo calcular posición visual
             }
 
             // Usar posición inicial si existe, sino usar rect actual
@@ -167,8 +172,8 @@ export default function ChatBubble() {
         }
       };
 
-      // Empezar después de 800ms (duración de animación)
-      setTimeout(() => tryGetPosition(0), 800);
+      // Empezar después de 1200ms (dar tiempo suficiente a que terminen las animaciones de framer-motion)
+      setTimeout(() => tryGetPosition(0), 1200);
     };
 
     // Si el documento ya cargó, inicializar
@@ -187,8 +192,17 @@ export default function ChatBubble() {
     };
 
     const handleResize = () => {
-      // Resetear posición inicial al cambiar tamaño para recalcular
-      initialHeroPositionRef.current = null;
+      // Solo resetear si el cambio de tamaño es significativo (cambio de orientación)
+      const isMobile = window.innerWidth < 1024;
+      if (!isMobile) {
+        // En desktop, resetear para recalcular
+        initialHeroPositionRef.current = null;
+      }
+      // En móvil, recalcular la posición centrada
+      if (isMobile && initialHeroPositionRef.current) {
+        const newCenterX = (window.innerWidth - initialHeroPositionRef.current.size) / 2;
+        initialHeroPositionRef.current.x = newCenterX;
+      }
       updateHeroPosition();
     };
 
