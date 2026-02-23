@@ -6,8 +6,8 @@ import { Send, X, Loader2, Info } from 'lucide-react';
 // CONFIGURACIÓN - MODIFICA ESTOS VALORES
 // ============================================
 const CONFIG = {
-  // Webhook de n8n
-  webhookUrl: 'https://daniel9romero.app.n8n.cloud/webhook/c29242f0-52cc-4e00-9d6e-eea254e18b13',
+  // API de Vercel
+  webhookUrl: 'https://portafolio-api.vercel.app/api/chat',
 
   // Información del asistente
   assistantName: 'Daniel Romero',
@@ -388,13 +388,19 @@ export default function ChatBubble() {
     setIsLoading(true);
 
     try {
+      // Build conversation history for the API
+      const conversationHistory = messages
+        .filter(m => m.text !== '¡Hola! Soy José Daniel, Head of Intelligence. Este es mi portafolio, estoy aquí para resolver tus dudas sobre mi experiencia y proyectos.')
+        .map(m => ({ role: m.isUser ? 'user' : 'assistant', content: m.text }));
+      conversationHistory.push({ role: 'user', content: userMessage.text });
+
       const response = await fetch(CONFIG.webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: userMessage.text,
+          messages: conversationHistory,
           sessionId: sessionId
         }),
       });
@@ -403,15 +409,8 @@ export default function ChatBubble() {
         throw new Error('Error en la respuesta');
       }
 
-      const contentType = response.headers.get('content-type');
-      let botText: string;
-
-      if (contentType?.includes('application/json')) {
-        const data = await response.json();
-        botText = data.response || data.output || data.message || data;
-      } else {
-        botText = await response.text();
-      }
+      const data = await response.json();
+      const botText: string = data.response || data.output || data.message || data;
 
       const botMessage: Message = {
         id: Date.now() + 1,

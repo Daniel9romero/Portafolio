@@ -159,7 +159,7 @@ export function ParticlesBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0"
-      style={{ zIndex: 0, pointerEvents: 'auto' }}
+      style={{ zIndex: 0, pointerEvents: 'none' }}
     />
   );
 }
