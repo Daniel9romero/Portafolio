@@ -7,7 +7,7 @@ import { Send, X, Loader2, Info } from 'lucide-react';
 // ============================================
 const CONFIG = {
   // API de Vercel
-  webhookUrl: 'https://portafolio-api.vercel.app/api/chat',
+  webhookUrl: 'https://portafolio-api-three.vercel.app/api/chat',
 
   // Información del asistente
   assistantName: 'Daniel Romero',
