@@ -299,6 +299,9 @@ export default function ChatBubble() {
         const snapped = snapToEdge(cornerPosition.x, cornerPosition.y);
         setCornerPosition(snapped);
       });
+    } else {
+      // Click without drag - open chat (pointer capture prevents button onClick from firing)
+      handleOpenChat();
     }
   };
 
